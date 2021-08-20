@@ -7,12 +7,6 @@ import { ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Body, Controller, Get, HttpCode, Param, Post, Query } from '@nestjs/common';
 import { ApiPaginatedResponseBO, ApiListResponseBO, ApiResponseBO } from '@/extends/swagger';
 
-/**
- * 建议引入 Entity (ORM) 中定义的实体类来实现数据持久化
- * 可以是 sequelize/mongoose/typeorm/或者其他提前定义好的拓展模块。
- */
-// import { {{ upperName }} } from '@/extends/sequelize';
-
 import { Create{{ upperName }}DTO, Find{{ upperName }}DTO, Paginated{{ upperName }}DTO, Update{{ upperName }}DTO } from '../dto';
 import { {{ upperName }}Service } from '../service';
 import { {{ upperName }}BO } from '../bo';
