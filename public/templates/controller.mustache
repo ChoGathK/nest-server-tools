@@ -1,0 +1,72 @@
+/**
+ * 业务逻辑控制层（Controller）
+ */
+
+import { HTTP_STATUS, IHttpResponsePaginated } from '@/common';
+import { ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Get, HttpCode, Param, Post, Query } from '@nestjs/common';
+import { ApiPaginatedResponseBO, ApiListResponseBO, ApiResponseBO } from '@/extends/swagger';
+
+/**
+ * 建议引入 Entity (ORM) 中定义的实体类来实现数据持久化
+ * 可以是 sequelize/mongoose/typeorm/或者其他提前定义好的拓展模块。
+ */
+// import { {{ upperName }} } from '@/extends/sequelize';
+
+import { Create{{ upperName }}DTO, Find{{ upperName }}DTO, Paginated{{ upperName }}DTO, Update{{ upperName }}DTO } from '../dto';
+import { {{ upperName }}Service } from '../service';
+import { {{ upperName }}BO } from '../bo';
+
+@ApiTags('{{ upperName }}')
+@Controller('{{ upperName }}')
+@ApiExtraModels({{ upperName }}BO)
+export class {{ upperName }}Controller {
+  constructor(
+    private readonly {{ upperName }}: {{ upperName }}Service,
+  ) {}
+
+  @ApiOperation({ summary: '查询详情 - {{ upperName }}' })
+  @ApiResponseBO({{ upperName }}BO)
+  @Get('/find/one')
+  public async findOne(@Query() dto: Find{{ upperName }}DTO): Promise<{{ upperName }}BO> {
+    return this.{{ upperName }}.findOne(dto);
+  }
+
+  @ApiOperation({ summary: '查询全部 - {{ upperName }}' })
+  @ApiListResponseBO({{ upperName }}BO)
+  @Get('/find/all')
+  public async findAll(@Query() dto: Find{{ upperName }}DTO): Promise<{{ upperName }}BO[]> {
+    return this.{{ upperName }}.findAll(dto);
+  }
+
+  @ApiOperation({ summary: '分页查询 - {{ upperName }}' })
+  @ApiPaginatedResponseBO({{ upperName }}BO)
+  @Get('/paginated')
+  public async paginated(@Query() dto: Paginated{{ upperName }}DTO): Promise<IHttpResponsePaginated<{{ upperName }}BO>> {
+    return this.{{ upperName }}.paginated(dto);
+  }
+
+  @ApiOperation({ summary: '创建 - {{ upperName }}' })
+  @ApiResponseBO({{ upperName }}BO)
+  @Post('/create')
+  @HttpCode(HTTP_STATUS.SUCCESS)
+  public async create(@Body() dto: Create{{ upperName }}DTO): Promise<{{ upperName }}BO> {
+    return this.{{ upperName }}.create(dto);
+  }
+
+  @ApiOperation({ summary: '更新 - {{ upperName }}' })
+  @ApiResponseBO()
+  @Post('/update')
+  @HttpCode(HTTP_STATUS.SUCCESS)
+  public async update(@Param('id') id: string, @Body() dto: Update{{ upperName }}DTO): Promise<void> {
+    return this.{{ upperName }}.update(id, dto);
+  }
+
+  @ApiOperation({ summary: '删除 - {{ upperName }}' })
+  @ApiResponseBO()
+  @Post('/delete')
+  @HttpCode(HTTP_STATUS.SUCCESS)
+  public async delete(@Param('id') id: string): Promise<void> {
+    return this.{{ upperName }}.delete(id);
+  }
+}

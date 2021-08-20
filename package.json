@@ -1,0 +1,184 @@
+{
+	"name": "nestjs-server-tools",
+	"displayName": "NestJS Server Tool",
+	"publisher": "chogath",
+	"description": "Quickly create NestJS Server Files tool",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "images/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chogath/nestjs-tool"
+	},
+	"bugs": {
+		"url": "https://github.com/chogath/nestjs-tool/issues",
+		"email": "chogath@163.com"
+	},
+	"activationEvents": [
+		"onCommand:extension.BO",
+		"onCommand:extension.DTO",
+		"onCommand:extension.Controller",
+		"onCommand:extension.Extends",
+		"onCommand:extension.Filter",
+		"onCommand:extension.Guard",
+		"onCommand:extension.Interceptor",
+		"onCommand:extension.Module.ts",
+		"onCommand:extension.Modules",
+		"onCommand:extension.Pipe",
+		"onCommand:extension.Provider",
+		"onCommand:extension.Service"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "nestjs-server-tools"
+		},
+		"commands": [
+			{
+				"command": "extension.Modules",
+				"title": "Nest-S: New Module"
+			},
+			{
+				"command": "extension.Extends",
+				"title": "Nest-S: New Extend"
+			},
+			{
+				"command": "extension.Module.ts",
+				"title": "Nest-S: Module.ts"
+			},
+			{
+				"command": "extension.BO",
+				"title": "Nest-S: BO"
+			},
+			{
+				"command": "extension.DTO",
+				"title": "Nest-S: DTO"
+			},
+			{
+				"command": "extension.Controller",
+				"title": "Nest-S: Controller"
+			},
+			{
+				"command": "extension.Service",
+				"title": "Nest-S: Service"
+			},
+			{
+				"command": "extension.Filter",
+				"title": "Nest-S: Filter"
+			},
+			{
+				"command": "extension.Guard",
+				"title": "Nest-S: Guard"
+			},
+			{
+				"command": "extension.Interceptor",
+				"title": "Nest-S: Interceptor"
+			},
+			{
+				"command": "extension.Provider",
+				"title": "Nest-S: Provider"
+			},
+			{
+				"command": "extension.Pipe",
+				"title": "Nest-S: Pipe"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.Modules",
+					"when": "explorerResourceIsFolder",
+					"group": "1_workspace"
+				},
+				{
+					"command": "extension.Extends",
+					"when": "explorerResourceIsFolder",
+					"group": "1_workspace"
+				},
+				{
+					"command": "extension.BO",
+					"when": "explorerResourceIsFolder",
+					"group": "2_workspace"
+				},
+				{
+					"command": "extension.DTO",
+					"when": "explorerResourceIsFolder",
+					"group": "2_workspace"
+				},
+				{
+					"command": "extension.Controller",
+					"when": "explorerResourceIsFolder",
+					"group": "2_workspace"
+				},
+				{
+					"command": "extension.Service",
+					"when": "explorerResourceIsFolder",
+					"group": "2_workspace"
+				},
+				{
+					"command": "extension.Filter",
+					"when": "explorerResourceIsFolder",
+					"group": "2_workspace"
+				},
+				{
+					"command": "extension.Interceptor",
+					"when": "explorerResourceIsFolder",
+					"group": "2_workspace"
+				},
+				{
+					"command": "extension.Pipe",
+					"when": "explorerResourceIsFolder",
+					"group": "2_workspace"
+				},
+				{
+					"command": "extension.Provider",
+					"when": "explorerResourceIsFolder",
+					"group": "2_workspace"
+				},
+				{
+					"command": "extension.Guard",
+					"when": "explorerResourceIsFolder",
+					"group": "2_workspace"
+				},
+				{
+					"command": "extension.Module.ts",
+					"when": "explorerResourceIsFolder",
+					"group": "3_workspace"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js",
+		"package": "cp -r src/templates ./out && vsce package"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.52.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/fs-extra": "^9.0.6",
+		"@types/mustache": "^4.1.0",
+		"eslint": "^7.15.0",
+		"@typescript-eslint/eslint-plugin": "^4.9.0",
+		"@typescript-eslint/parser": "^4.9.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	},
+	"dependencies": {
+		"fs-extra": "^9.0.1",
+		"mustache": "^4.1.0"
+	}
+}
