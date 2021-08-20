@@ -1,8 +1,8 @@
 {
-	"name": "nestjs-server-tools",
-	"displayName": "NestJS Server Tool",
+	"name": "nest-server-tools",
+	"displayName": "Nest Server Tool",
 	"publisher": "chogath",
-	"description": "Quickly create NestJS Server Files tool",
+	"description": "🦁 nest-server 的 vscode 插件",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.52.0"
@@ -36,7 +36,7 @@
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": {
-			"title": "nestjs-server-tools"
+			"title": "nest-server-tools"
 		},
 		"commands": [
 			{
