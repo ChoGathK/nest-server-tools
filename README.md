@@ -1,6 +1,6 @@
 # Nest-Server-Tools
 
-用于在 VSCODE 中快速创建 Nest-Server 模块/文件/目录。
+🦁 帮助 nest-server 开发者在 vscode 中快速创建模板/目录/文件
 
 ## Features
 
