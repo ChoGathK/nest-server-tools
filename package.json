@@ -1,6 +1,6 @@
 {
 	"name": "nest-server-tools",
-	"displayName": "Nest Server Tool",
+	"displayName": "Nest-Server-Tools",
 	"publisher": "chogath",
 	"description": "🦁 nest-server 的 vscode 插件",
 	"version": "0.0.1",
