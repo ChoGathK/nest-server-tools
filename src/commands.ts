@@ -105,7 +105,7 @@ export class CommandHander {
     // 创建模块文件
     const templatePath = resolve(__dirname, `../public/templates/${topic}.mustache`);
     const templateData = readFileSync(templatePath, 'utf8');
-    const newFileData = render(templateData, { upperName });
+    const newFileData = render(templateData, { upperName, fileName });
     writeFileSync(newFilePath, `${newFileData}\n`);
 
     // 更新桶文件引用

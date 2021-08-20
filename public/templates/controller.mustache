@@ -4,7 +4,7 @@
 
 import { HTTP_STATUS, IHttpResponsePaginated } from '@/common';
 import { ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { Body, Controller, Get, HttpCode, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpException, Param, Post, Query } from '@nestjs/common';
 import { ApiPaginatedResponseBO, ApiListResponseBO, ApiResponseBO } from '@/extends/swagger';
 
 import { Create{{ upperName }}DTO, Find{{ upperName }}DTO, Paginated{{ upperName }}DTO, Update{{ upperName }}DTO } from '../dto';
@@ -12,7 +12,7 @@ import { {{ upperName }}Service } from '../service';
 import { {{ upperName }}BO } from '../bo';
 
 @ApiTags('{{ upperName }}')
-@Controller('{{ upperName }}')
+@Controller('{{ fileName }}')
 @ApiExtraModels({{ upperName }}BO)
 export class {{ upperName }}Controller {
   constructor(
@@ -50,17 +50,19 @@ export class {{ upperName }}Controller {
 
   @ApiOperation({ summary: '更新 - {{ upperName }}' })
   @ApiResponseBO()
-  @Post('/update')
+  @Post('/update/:id')
   @HttpCode(HTTP_STATUS.SUCCESS)
   public async update(@Param('id') id: string, @Body() dto: Update{{ upperName }}DTO): Promise<void> {
+    if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.PARAM_UNPROCESSABLE);
     return this.{{ upperName }}.update(id, dto);
   }
 
   @ApiOperation({ summary: '删除 - {{ upperName }}' })
   @ApiResponseBO()
-  @Post('/delete')
+  @Post('/delete/:id')
   @HttpCode(HTTP_STATUS.SUCCESS)
   public async delete(@Param('id') id: string): Promise<void> {
+    if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.PARAM_UNPROCESSABLE);
     return this.{{ upperName }}.delete(id);
   }
 }
