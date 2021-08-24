@@ -27,7 +27,8 @@
 		"onCommand:extension.Filter",
 		"onCommand:extension.Guard",
 		"onCommand:extension.Interceptor",
-		"onCommand:extension.Module.ts",
+		"onCommand:extension.Module.File",
+		"onCommand:extension.Sequelize.File",
 		"onCommand:extension.Modules",
 		"onCommand:extension.Pipe",
 		"onCommand:extension.Provider",
@@ -41,114 +42,123 @@
 		"commands": [
 			{
 				"command": "extension.Modules",
-				"title": "Nest-S: New Module"
+				"title": "🏗 Nest-S: Module"
 			},
 			{
 				"command": "extension.Extends",
-				"title": "Nest-S: New Extend"
+				"title": "🏗 Nest-S: Extend"
 			},
 			{
-				"command": "extension.Module.ts",
-				"title": "Nest-S: Module.ts"
+				"command": "extension.Module.File",
+				"title": "📄 Nest-S: module"
+			},
+			{
+				"command": "extension.Sequelize.File",
+				"title": "📄 Nest-S: sequelize"
 			},
 			{
 				"command": "extension.BO",
-				"title": "Nest-S: BO"
+				"title": "📦 Nest-S: BO"
 			},
 			{
 				"command": "extension.DTO",
-				"title": "Nest-S: DTO"
+				"title": "📦 Nest-S: DTO"
 			},
 			{
 				"command": "extension.Controller",
-				"title": "Nest-S: Controller"
+				"title": "📦 Nest-S: Controller"
 			},
 			{
 				"command": "extension.Service",
-				"title": "Nest-S: Service"
-			},
-			{
-				"command": "extension.Filter",
-				"title": "Nest-S: Filter"
-			},
-			{
-				"command": "extension.Guard",
-				"title": "Nest-S: Guard"
-			},
-			{
-				"command": "extension.Interceptor",
-				"title": "Nest-S: Interceptor"
+				"title": "📦 Nest-S: Service"
 			},
 			{
 				"command": "extension.Provider",
-				"title": "Nest-S: Provider"
+				"title": "📦 Nest-S: Provider"
+			},
+			{
+				"command": "extension.Filter",
+				"title": "📦 Nest-S: Filter"
+			},
+			{
+				"command": "extension.Guard",
+				"title": "📦 Nest-S: Guard"
+			},
+			{
+				"command": "extension.Interceptor",
+				"title": "📦 Nest-S: Interceptor"
 			},
 			{
 				"command": "extension.Pipe",
-				"title": "Nest-S: Pipe"
+				"title": "📦 Nest-S: Pipe"
 			}
 		],
 		"menus": {
 			"explorer/context": [
 				{
 					"command": "extension.Modules",
-					"when": "explorerResourceIsFolder",
-					"group": "1_workspace"
+					"when": "explorerResourceIsFolder && resourceFilename == modules",
+					"group": "navigation"
 				},
 				{
 					"command": "extension.Extends",
-					"when": "explorerResourceIsFolder",
-					"group": "1_workspace"
+					"when": "explorerResourceIsFolder && resourceFilename == extends",
+					"group": "navigation"
 				},
 				{
 					"command": "extension.BO",
 					"when": "explorerResourceIsFolder",
-					"group": "2_workspace"
+					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.DTO",
 					"when": "explorerResourceIsFolder",
-					"group": "2_workspace"
+					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Controller",
 					"when": "explorerResourceIsFolder",
-					"group": "2_workspace"
+					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Service",
 					"when": "explorerResourceIsFolder",
-					"group": "2_workspace"
+					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Filter",
 					"when": "explorerResourceIsFolder",
-					"group": "2_workspace"
+					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Interceptor",
 					"when": "explorerResourceIsFolder",
-					"group": "2_workspace"
+					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Pipe",
 					"when": "explorerResourceIsFolder",
-					"group": "2_workspace"
+					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Provider",
 					"when": "explorerResourceIsFolder",
-					"group": "2_workspace"
+					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Guard",
 					"when": "explorerResourceIsFolder",
-					"group": "2_workspace"
+					"group": "9_cutcopypaste"
 				},
 				{
-					"command": "extension.Module.ts",
+					"command": "extension.Module.File",
 					"when": "explorerResourceIsFolder",
-					"group": "3_workspace"
+					"group": "7_modification"
+				},
+				{
+					"command": "extension.Sequelize.File",
+					"when": "explorerResourceIsFolder",
+					"group": "7_modification"
 				}
 			]
 		}

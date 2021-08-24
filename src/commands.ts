@@ -44,7 +44,9 @@ export class CommandHander {
   
       /** 判断创建目录还是创建文件 */
       if (
-        this.resource.path === `${this.parentDir}/${this.topic}` || this.topic === 'module'
+        this.resource.path === `${this.parentDir}/${this.topic}`
+        || this.topic === 'module'
+        || this.topic === 'sequelize'
       ) {
         this.createFile(input, this.topic);
         return;

@@ -15,12 +15,13 @@ import { CommandHander } from './commands';
 
 export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
-		/** 初始化完整模块 */
+		/** 创建模块 */
 		registerCommand('extension.Modules', 'modules', 'init'),
 		registerCommand('extension.Extends', 'extends', 'init'),
-		/** 创建 module.ts */
-		registerCommand('extension.Module.ts', 'module'),
-		/** 创建常用模块目录 */
+		/** 创建文件 */
+		registerCommand('extension.Module.File', 'module'),
+		registerCommand('extension.Sequelize.File', 'sequelize'),
+		/** 创建目录/文件 */
 		registerCommand('extension.Controller', 'controller'),
 		registerCommand('extension.Service', 'service'),
 		registerCommand('extension.Provider', 'provider'),
