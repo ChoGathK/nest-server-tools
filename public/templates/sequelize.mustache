@@ -7,9 +7,9 @@ export interface I{{ upperName }} extends IBaseEntity {
 }
 
 @Table({ tableName: '{{ fileName }} ', comment: '{{ upperName }}表' })
-export class {{ upperName }} 
+export class {{ upperName }}
   extends BaseEntity<{{ upperName }}>
-  implements I{{ upperName }} 
+  implements I{{ upperName }}
 {
   @Column({ allowNull: false, comment: '名字', type: DataType.STRING(60) })
   name: string;
