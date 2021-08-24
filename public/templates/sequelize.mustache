@@ -6,7 +6,7 @@ export interface I{{ upperName }} extends IBaseEntity {
   name?: string;
 }
 
-@Table({ tableName: '{{ fileName }} ', comment: '{{ upperName }}表' })
+@Table({ tableName: '{{ fileName }}', comment: '{{ upperName }}表' })
 export class {{ upperName }}
   extends BaseEntity<{{ upperName }}>
   implements I{{ upperName }}
