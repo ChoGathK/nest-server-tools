@@ -71,7 +71,7 @@ export class CommandHander {
 
   /** 初始化 Common 目录 */
   private initCommon() {
-    const files = ['type', 'constant', 'enum', 'interface', 'index'];
+    const files = ['base', 'type', 'constant', 'enum', 'interface', 'index'];
 
     if (existsSync(`${this.resource.path}/common`)) {
       return window.showErrorMessage('common 目录已存在');
