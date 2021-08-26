@@ -2,9 +2,9 @@
 
 ## v0.0.1
 
-- tools 支持根据 workspace 区分工作栏展示样式
-- tools 支持根据不同场景选择创建 模板/目录/文件
-- tools 其他功能
+- ✅ tools 支持根据 workspace 区分工作栏展示样式
+- ✅ tools 支持根据不同场景选择创建 模板/目录/文件
+- ✅ tools 其他功能
 
 ## v0.0.2
 
@@ -24,8 +24,8 @@
 
 ## v0.0.6
 
-- 优化 tools 工作栏展示样式
-- 新增 sequelize entity 支持
+- ✅ 优化 tools 工作栏展示样式
+- ✅ 新增 sequelize entity 支持
 
 ## v0.0.7
 
@@ -34,3 +34,10 @@
 ## v0.0.8
 
 - code style
+
+## v0.0.9
+
+- ✅ 根据目录结构，自适应菜单选项
+- ✅ 增加对于 common/shared 目录的支持
+- ✅ 增加对于 decorator 📦 的支持
+- ✅ 优化 barrel 桶文件引入自适应

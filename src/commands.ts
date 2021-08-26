@@ -32,6 +32,16 @@ export class CommandHander {
   /** 命令执行器 */
   private async handler() {
     try {
+      if (this.topic === 'shared') {
+        this.initShared();
+        return;
+      } 
+
+      if (this.topic === 'common') {
+        this.initCommon();
+        return;
+      } 
+
       const input = await this.currentInput();
       if (!input) return;
   
@@ -56,6 +66,38 @@ export class CommandHander {
       }
     } catch (error) {
       window.showErrorMessage(error);
+    }
+  }
+
+  /** 初始化 Common 目录 */
+  private initCommon() {
+    const files = ['type', 'constant', 'enum', 'interface', 'index'];
+
+    if (existsSync(`${this.resource.path}/common`)) {
+      return window.showErrorMessage('common 目录已存在');
+    }
+
+    /** 创建模块目录 */
+    mkdirSync(`${this.resource.path}/common`);
+
+    for (const file of files) {
+      writeFileSync(`${this.resource.path}/common/${file}.ts`, '');
+    }
+  }
+
+  /** 初始化 Shared 目录 */
+  private initShared() {
+    const files = ['index'];
+
+    if (existsSync(`${this.resource.path}/shared`)) {
+      return window.showErrorMessage('shared 目录已存在');
+    }
+
+    /** 创建模块目录 */
+    mkdirSync(`${this.resource.path}/shared`);
+
+    for (const file of files) {
+      writeFileSync(`${this.resource.path}/shared/${file}.ts`, '');
     }
   }
 
@@ -102,7 +144,10 @@ export class CommandHander {
     const fileName = topic === 'module' ? 'module' : TextUtils.upperCaseToLine(input);
     const upperName = TextUtils.firstToUpperCase(input);
     const newFilePath = `${this.resource.path}${specified ? `/${specified}` : ''}/${fileName}.ts`;
-    if (existsSync(newFilePath)) window.showErrorMessage(`${fileName} 文件已存在`);
+
+    if (existsSync(newFilePath)) {
+      return window.showErrorMessage(`${fileName} 文件已存在`);
+    }
 
     // 创建模块文件
     const templatePath = resolve(__dirname, `../public/templates/${topic}.mustache`);
@@ -116,9 +161,14 @@ export class CommandHander {
     const barreFilePath = `${this.resource.path}${specified ? `/${specified}` : ''}/index.ts`;
     const barrelFileData = render(barrelData, { fileName });
 
-    existsSync(barreFilePath) 
-      ? appendFileSync(barreFilePath, `${barrelFileData}\n`)
-      : writeFileSync(barreFilePath, `${barrelFileData}\n`);
+    if (existsSync(barreFilePath)) {
+      // 如果已经有引用记录则无需新增
+      if (!readFileSync(barreFilePath).includes(barrelFileData)) {
+        appendFileSync(barreFilePath, `${barrelFileData}\n`);
+      };
+    } else {
+      writeFileSync(barreFilePath, `${barrelFileData}\n`);
+    }
   }
 
   /** 创建目录 */
