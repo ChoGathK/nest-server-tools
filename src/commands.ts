@@ -24,7 +24,7 @@ export class CommandHander {
   /** 获取用户输入的名称 */
   private async currentInput () {
     const input: string = await new Promise((resolve) => {
-      resolve(window.showInputBox({ placeHolder: "输入名称（请遵循驼峰命名，小写开头）" }));
+      resolve(window.showInputBox({ placeHolder: "输入名称（多个单词请用 - 拼接）" }));
     });
     return TextUtils.verify(input) ? input : null;
   }
@@ -142,7 +142,11 @@ export class CommandHander {
   /** 创建文件 */
   private createFile(input: string, topic: string, specified = '') {
     const fileName = topic === 'module' ? 'module' : TextUtils.upperCaseToLine(input);
-    const upperName = TextUtils.firstToUpperCase(input);
+
+    const upperName = input.includes('-')
+      ? TextUtils.firstToUpperCase(TextUtils.lineToUpperCase(input))
+      : TextUtils.firstToUpperCase(input);
+  
     const newFilePath = `${this.resource.path}${specified ? `/${specified}` : ''}/${fileName}.ts`;
 
     if (existsSync(newFilePath)) {
@@ -175,7 +179,9 @@ export class CommandHander {
   private createFolder(input: string, topic: string, specified = '') {
     const currTopic = specified ? specified : topic;
     const fileName = TextUtils.upperCaseToLine(input);
-    const upperName = TextUtils.firstToUpperCase(input);
+    const upperName = input.includes('-')
+      ? TextUtils.firstToUpperCase(TextUtils.lineToUpperCase(input))
+      : TextUtils.firstToUpperCase(input);
 
     /** 创建主题目录 */
     if (existsSync(`${this.resource.path}/${topic}`)) {
