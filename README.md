@@ -4,7 +4,7 @@
 
 ## Architecture
 
-[* nest-server architecture](https://github.com/sophons-space/nest-server#architecture)
+[* 架构图](https://github.com/sophons-space/nest-server/blob/master/public/doc/architecture.md#%E6%9E%B6%E6%9E%84%E5%9B%BE)
 
 ## Features
 
@@ -34,6 +34,33 @@
 | 📦  Nest-S: Pipe                    |
 | 📦  Nest-S: Provider                |
 | 📦  Nest-S: Service                 |
+
+## Common
+
+> 请将使用 Nest-Server 创建的项目放置于独立的 vscode 工作区，确保您有最好的开发体验 ☺️
+
+- 在 src - modules 下点击右键唤出菜单，可以看到 `🏗  Nest-S: New Module` 用于创建整个通用业务模块
+- 在 src - extends 下点击右键唤出菜单，可以看到 `🏗  Nest-S: New Extend` 用于创建整个通用拓展模块
+- 在 src - modules 的模块中点击右键唤出菜单，可以看到：
+  - `📁  Nest-S: Shared` 用于创建分享目录
+  - `📁  Nest-S: Common` 用于创建公共目录
+  - `📄  Nest-S: module` 用于创建模块注册表
+  - `📦  Nest-S: BO`     用于创建 BO    
+  - `📦  Nest-S: Decorator` 用于创建 Decorator
+  - `📦  Nest-S: DTO`        用于创建 DTO
+  - `📦  Nest-S: Controller` 用于创建 Controller
+  - `📦  Nest-S: Filter` 用于创建 Filter
+  - `📦  Nest-S: Guard` 用于创建 Guard
+  - `📦  Nest-S: Interceptor` 用于创建 Interceptor
+  - `📦  Nest-S: Pipe` 用于创建 Pipe    
+  - `📦  Nest-S: Provider` 用于创建 Provider
+  - `📦  Nest-S: Service` 用于创建 Service 
+- 在 src - extends 的模块中点击右键唤出菜单，可以看到：
+  - `📁  Nest-S: Shared` 用于创建分享目录
+  - `📁  Nest-S: Common` 用于创建公共目录
+  - `📄  Nest-S: module` 用于创建模块注册表
+  - `📦  Nest-S: Provider` 用于创建 Provider
+- 在 src - extends - sequelize - shared 目录中点击右键唤出菜单，可以看到：`📄  Nest-S: sequelize` 用于创建 sequelize model 模板
 
 ## License
 
