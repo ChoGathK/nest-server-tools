@@ -122,92 +122,67 @@
 				},
 				{
 					"command": "extension.BO",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.DTO",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != bo && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Controller",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != bo && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Service",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != bo && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Filter",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != bo && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Interceptor",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != bo && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Pipe",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != bo && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Guard",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != bo && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Provider",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != bo && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
-					"group": "9_cutcopypaste"
-				},
-				{
-					"command": "extension.Provider",
-					"when": "explorerResourceIsFolder && resourceFilename != extends && resourcePath =~ /extends/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != bo && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Decorator",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != bo && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
-					"group": "9_cutcopypaste"
-				},
-				{
-					"command": "extension.Decorator",
-					"when": "explorerResourceIsFolder && resourceFilename != extends && resourcePath =~ /extends/ && resourceFilename != controller && resourceFilename != bo && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Shared",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != bo && resourceFilename != common && resourceFilename != shared",
-					"group": "7_modification"
-				},
-				{
-					"command": "extension.Shared",
-					"when": "explorerResourceIsFolder && resourceFilename != extends && resourcePath =~ /extends/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != bo && resourceFilename != common && resourceFilename != shared",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "7_modification"
 				},
 				{
 					"command": "extension.Common",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != bo && resourceFilename != common",
-					"group": "7_modification"
-				},
-				{
-					"command": "extension.Common",
-					"when": "explorerResourceIsFolder && resourceFilename != extends && resourcePath =~ /extends/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != bo && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "7_modification"
 				},
 				{
 					"command": "extension.Module.File",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != bo && resourceFilename != common",
-					"group": "7_modification"
-				},
-				{
-					"command": "extension.Module.File",
-					"when": "explorerResourceIsFolder && resourceFilename != extends && resourcePath =~ /extends/ && resourceFilename != controller && resourceFilename != decorator && resourceFilename != dto && resourceFilename != filter && resourceFilename != guard && resourceFilename != interceptor && resourceFilename != pipe && resourceFilename != provider && resourceFilename != service && resourceFilename != shared && resourceFilename != bo && resourceFilename != common",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "7_modification"
 				},
 				{

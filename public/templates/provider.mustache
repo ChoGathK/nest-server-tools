@@ -1,20 +1,20 @@
 import { Injectable } from '@nestjs/common';
+import { BaseConfig, ConfigFactoryProvider } from '@/extends/config';
 
-// /** 工厂提供者（支持异步加载） */
-// export class {{ upperName }}FactoryProvider {
-//   public static provide = '{{ upperName }}'
+/** 工厂提供者（支持异步加载） */
+export class {{ upperName }}FactoryProvider {
+  public static provide = '{{ upperName }}'
 
-//   public static getProvider() {
-//     return {
-//       provide: this.provide,
-//       inject: [ConfigsProvider],
-//       useFactory: async (optionsProvider: ConfigsProvider) => {
-//         const options = ConfigsProvider.get();
-//         return new DatabaseConnection(options);
-//       },
-//     };
-//   }
-// }
+  public static getProvider() {
+    return {
+      provide: this.provide,
+      inject: [ConfigFactoryProvider],
+      useFactory: async (config: BaseConfig) => {
+        // const options = config.get();
+      },
+    };
+  }
+}
 
 /** 普通提供者 */
 @Injectable()

@@ -16,28 +16,28 @@ import { {{ upperName }}BO } from '../bo';
 @ApiExtraModels({{ upperName }}BO)
 export class {{ upperName }}Controller {
   constructor(
-    private readonly {{ upperName }}: {{ upperName }}Service,
+    private readonly {{ fileName }}: {{ upperName }}Service,
   ) {}
 
   @ApiOperation({ summary: '查询详情 - {{ upperName }}' })
   @ApiResponseBO({{ upperName }}BO)
   @Get('/find/one')
   public async findOne(@Query() dto: Find{{ upperName }}DTO): Promise<{{ upperName }}BO> {
-    return this.{{ upperName }}.findOne(dto);
+    return this.{{ fileName }}.findOne(dto);
   }
 
   @ApiOperation({ summary: '查询全部 - {{ upperName }}' })
   @ApiListResponseBO({{ upperName }}BO)
   @Get('/find/all')
   public async findAll(@Query() dto: Find{{ upperName }}DTO): Promise<{{ upperName }}BO[]> {
-    return this.{{ upperName }}.findAll(dto);
+    return this.{{ fileName }}.findAll(dto);
   }
 
   @ApiOperation({ summary: '分页查询 - {{ upperName }}' })
   @ApiPaginatedResponseBO({{ upperName }}BO)
   @Get('/paginated')
   public async paginated(@Query() dto: Paginated{{ upperName }}DTO): Promise<IHttpResponsePaginated<{{ upperName }}BO>> {
-    return this.{{ upperName }}.paginated(dto);
+    return this.{{ fileName }}.paginated(dto);
   }
 
   @ApiOperation({ summary: '创建 - {{ upperName }}' })
@@ -45,7 +45,7 @@ export class {{ upperName }}Controller {
   @Post('/create')
   @HttpCode(HTTP_STATUS.SUCCESS)
   public async create(@Body() dto: Create{{ upperName }}DTO): Promise<{{ upperName }}BO> {
-    return this.{{ upperName }}.create(dto);
+    return this.{{ fileName }}.create(dto);
   }
 
   @ApiOperation({ summary: '更新 - {{ upperName }}' })
@@ -54,7 +54,7 @@ export class {{ upperName }}Controller {
   @HttpCode(HTTP_STATUS.SUCCESS)
   public async update(@Param('id') id: string, @Body() dto: Update{{ upperName }}DTO): Promise<void> {
     if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.PARAM_UNPROCESSABLE);
-    return this.{{ upperName }}.update(id, dto);
+    return this.{{ fileName }}.update(id, dto);
   }
 
   @ApiOperation({ summary: '删除 - {{ upperName }}' })
@@ -63,6 +63,6 @@ export class {{ upperName }}Controller {
   @HttpCode(HTTP_STATUS.SUCCESS)
   public async delete(@Param('id') id: string): Promise<void> {
     if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.PARAM_UNPROCESSABLE);
-    return this.{{ upperName }}.delete(id);
+    return this.{{ fileName }}.delete(id);
   }
 }

@@ -59,20 +59,25 @@
   - `📁  Nest-S: Shared` 用于创建公共资源目录
   - `📁  Nest-S: Common` 用于创建公共约定目录
   - `📄  Nest-S: module` 用于创建模块注册表
-  - `📦  Nest-S: BO`     用于创建 BO    
-  - `📦  Nest-S: Decorator` 用于创建 Decorator
-  - `📦  Nest-S: DTO`        用于创建 DTO
+  - `📦  Nest-S: BO`     用于创建 BO
+  - `📦  Nest-S: DTO`    用于创建 DTO
   - `📦  Nest-S: Controller` 用于创建 Controller
+  - `📦  Nest-S: Service` 用于创建 Service 
+  - `📦  Nest-S: Decorator` 用于创建 Decorator
   - `📦  Nest-S: Filter` 用于创建 Filter
   - `📦  Nest-S: Guard` 用于创建 Guard
   - `📦  Nest-S: Interceptor` 用于创建 Interceptor
   - `📦  Nest-S: Pipe` 用于创建 Pipe    
   - `📦  Nest-S: Provider` 用于创建 Provider
-  - `📦  Nest-S: Service` 用于创建 Service 
 - 在 src - extends 的模块中点击右键唤出菜单，可以看到：
   - `📁  Nest-S: Shared` 用于创建公共资源目录
   - `📁  Nest-S: Common` 用于创建公共约定目录
   - `📄  Nest-S: module` 用于创建模块注册表
+  - `📦  Nest-S: Decorator` 用于创建 Decorator
+  - `📦  Nest-S: Filter` 用于创建 Filter
+  - `📦  Nest-S: Guard` 用于创建 Guard
+  - `📦  Nest-S: Interceptor` 用于创建 Interceptor
+  - `📦  Nest-S: Pipe` 用于创建 Pipe    
   - `📦  Nest-S: Provider` 用于创建 Provider
 - 在 src - extends - sequelize - shared 目录中点击右键唤出菜单，可以看到：`📄  Nest-S: sequelize` 用于创建 sequelize model 模板
 

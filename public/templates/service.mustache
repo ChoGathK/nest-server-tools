@@ -4,52 +4,42 @@
 
 import { Injectable } from '@nestjs/common';
 
-/**
- * 建议引入 Entity (ORM) 中定义的实体类来实现数据持久化
- * 可以是 sequelize/mongoose/typeorm/或者其他提前定义好的拓展模块。
- */
-// import { {{ upperName }} } from '@/extends/sequelize';
-
 import { Create{{ upperName }}DTO, Find{{ upperName }}DTO, Paginated{{ upperName }}DTO, Update{{ upperName }}DTO } from '../dto';
+import { {{ upperName }}Provider } from '../provider';
 
 @Injectable()
 export class {{ upperName }}Service {
+  constructor(
+    private readonly {{ fileName }}Provider: {{ upperName }}Provider,
+  ) {}
+
   /** 单条查询 */
   public async findOne(dto: Find{{ upperName }}DTO) {
-    const { condition } = {{ upperName }}.getConditionByDTO(dto);
-    const result = await {{ upperName }}.findOne({ where: condition });
-    return result;
+    return this.{{ fileName }}Provider.findOne(dto);
   }
 
   /** 多条查询 */
   public async findAll(dto: Find{{ upperName }}DTO) {
-    const { condition } = {{ upperName }}.getConditionByDTO(dto);
-    const result = await {{ upperName }}.findAll({ where: condition });
-    return result;
+    return this.{{ fileName }}Provider.findAll(dto);
   }
 
   /** 分页查询 */
   public async paginated(dto: Paginated{{ upperName }}DTO) {
-    const { condition, page } = {{ upperName }}.getConditionByDTO(dto);
-    const result = await {{ upperName }}.paginated({ page, where: condition });
-    return result;
+    return this.{{ fileName }}Provider.paginated(dto);
   }
 
   /** 创建 */
   public async create(dto: Create{{ upperName }}DTO) {
-    const { entity } = {{ upperName }}.getEntityByDTO(dto);
-    const result = await {{ upperName }}.create(entity);
-    return result;
+    return this.{{ fileName }}Provider.create(dto);
   }
 
   /** 更新 */
   public async update(id: string, dto: Update{{ upperName }}DTO) {
-    const { entity } = {{ upperName }}.getEntityByDTO(dto);
-    await {{ upperName }}.update(entity, { where: { id }});
+    return this.{{ fileName }}Provider.update(id, dto);
   }
 
   /** 按主键ID删除 */
   public async delete(id: string) {
-    await {{ upperName }}.destroy({ where: { id }});
+    return this.{{ fileName }}Provider.delete(id);
   }
 }

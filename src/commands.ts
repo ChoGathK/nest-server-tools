@@ -117,6 +117,9 @@ export class CommandHander {
       this.updateBarrelFile(input, `${input}/${topic}`, topic);
     }
 
+    this.createFolder(input,`${input}/provider`, 'service-provider');
+    this.updateBarrelFile(input, `${input}/provider`, 'provider');
+
     this.createFile(input, 'module', input);
   }
 
@@ -194,7 +197,7 @@ export class CommandHander {
     // 这里用 this.topic 的原因是 init module 时 topic 会传为 module/`topic`
     const templatePath = resolve(__dirname, `../public/templates/${currTopic}.mustache`);
     const templateData = readFileSync(templatePath, 'utf8');
-    const newFileData = render(templateData, { upperName });
+    const newFileData = render(templateData, { upperName, fileName });
     const newFilePath = `${this.resource.path}/${topic}/${fileName}.ts`;
     writeFileSync(newFilePath, `${newFileData}\n`);
 
