@@ -29,6 +29,8 @@ export function activate(context: vscode.ExtensionContext) {
 		registerCommand('extension.Controller', 'controller'),
 		registerCommand('extension.Decorator', 'decorator'),
 		registerCommand('extension.DTO', 'dto'),
+		registerCommand('extension.DAO', 'dao'),
+		registerCommand('extension.Manager', 'manager'),
 		registerCommand('extension.Filter', 'filter'),
 		registerCommand('extension.Guard', 'guard'),
 		registerCommand('extension.Interceptor', 'interceptor'),

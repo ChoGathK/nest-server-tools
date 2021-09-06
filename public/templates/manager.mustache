@@ -1,0 +1,11 @@
+/**
+ * 通用业务处理层（Mananger）
+ * 1. 对 Service 层通用能力的下沉，如调用组合、缓存、事务处理。
+ * 2. 对 Provider 层的调用，处理返回结果及转化异常信息。
+ * 3. 与 DAO 层交互，以及对多个 DAO 的组合复用。
+ */
+
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class {{ upperName }}Mananger {}

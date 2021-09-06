@@ -103,7 +103,7 @@ export class CommandHander {
 
   /** 初始化 Modules 模块 */
   private initModules(input: string) {
-    const topics = ['bo', 'dto', 'controller', 'service'];
+    const topics = ['bo', 'dto', 'dao', 'manager', 'controller', 'service'];
 
     if (existsSync(`${this.resource.path}/${input}`)) {
       return window.showErrorMessage(`${this.resource.path}/${input} 已存在`);
@@ -117,10 +117,10 @@ export class CommandHander {
       this.updateBarrelFile(input, `${input}/${topic}`, topic);
     }
 
-    this.createFolder(input,`${input}/provider`, 'service-provider');
+    this.createFolder(input,`${input}/provider`, 'module-provider');
     this.updateBarrelFile(input, `${input}/provider`, 'provider');
 
-    this.createFile(input, 'service-module', input);
+    this.createFile(input, 'module', input);
   }
 
   /** 初始化 Extends 模块 */
@@ -144,16 +144,8 @@ export class CommandHander {
 
   /** 创建文件 */
   private createFile(input: string, topic: string, specified = '') {
-    let fileName = '';
+    const fileName = topic === 'module' ? 'module' : TextUtils.upperCaseToLine(input);
 
-    if (topic === 'module') {
-      fileName = 'module';
-    } else if (topic === 'service-module') {
-      fileName = 'module';
-    } else {
-      fileName = TextUtils.upperCaseToLine(input);
-    }
-    
     const upperName = input.includes('-')
       ? TextUtils.firstToUpperCase(TextUtils.lineToUpperCase(input))
       : TextUtils.firstToUpperCase(input);
@@ -162,6 +154,11 @@ export class CommandHander {
 
     if (existsSync(newFilePath)) {
       return window.showErrorMessage(`${fileName} 文件已存在`);
+    }
+
+    // 兼容 modules-provider 的创建
+    if (topic === 'provider' && this.resource.path.includes('/src/modules/')) {
+      topic = 'module-provider';
     }
 
     // 创建模块文件

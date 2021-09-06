@@ -1,6 +1,6 @@
 {
 	"name": "nest-server-tools",
-	"displayName": "Nest-Server-Tools",
+	"displayName": "Nesterver-Tools",
 	"publisher": "chogath",
 	"description": "🦁 帮助 nest-server 开发者在 vscode 中快速创建模板/目录/文件",
 	"version": "0.1.5",
@@ -24,6 +24,7 @@
 		"onCommand:extension.Controller",
 		"onCommand:extension.Common",
 		"onCommand:extension.DTO",
+		"onCommand:extension.DAO",
 		"onCommand:extension.Decorator",
 		"onCommand:extension.Extends",
 		"onCommand:extension.Filter",
@@ -33,6 +34,7 @@
 		"onCommand:extension.Shared",
 		"onCommand:extension.Sequelize.File",
 		"onCommand:extension.Modules",
+		"onCommand:extension.Manager",
 		"onCommand:extension.Pipe",
 		"onCommand:extension.Provider",
 		"onCommand:extension.Service"
@@ -45,67 +47,75 @@
 		"commands": [
 			{
 				"command": "extension.Modules",
-				"title": "🏗 Nest-S: Module"
+				"title": "🏗 Nest: Module"
 			},
 			{
 				"command": "extension.Extends",
-				"title": "🏗 Nest-S: Extend"
+				"title": "🏗 Nest: Extend"
 			},
 			{
 				"command": "extension.Module.File",
-				"title": "📄 Nest-S: module"
+				"title": "📄 Nest: module"
 			},
 			{
 				"command": "extension.Sequelize.File",
-				"title": "📄 Nest-S: sequelize"
+				"title": "📄 Nest: entity"
 			},
 			{
 				"command": "extension.Shared",
-				"title": "📁 Nest-S: shared"
+				"title": "📁 Nest: shared"
 			},
 			{
 				"command": "extension.Common",
-				"title": "📁 Nest-S: common"
+				"title": "📁 Nest: common"
 			},
 			{
 				"command": "extension.BO",
-				"title": "📦 Nest-S: BO"
+				"title": "📦 Nest: BO"
 			},
 			{
 				"command": "extension.DTO",
-				"title": "📦 Nest-S: DTO"
+				"title": "📦 Nest: DTO"
+			},
+			{
+				"command": "extension.DAO",
+				"title": "📦 Nest: DAO"
 			},
 			{
 				"command": "extension.Decorator",
-				"title": "📦 Nest-S: Decorator"
+				"title": "📦 Nest: Decorator"
 			},
 			{
 				"command": "extension.Controller",
-				"title": "📦 Nest-S: Controller"
+				"title": "📦 Nest: Controller"
 			},
 			{
 				"command": "extension.Service",
-				"title": "📦 Nest-S: Service"
+				"title": "📦 Nest: Service"
 			},
 			{
 				"command": "extension.Provider",
-				"title": "📦 Nest-S: Provider"
+				"title": "📦 Nest: Provider"
 			},
 			{
 				"command": "extension.Filter",
-				"title": "📦 Nest-S: Filter"
+				"title": "📦 Nest: Filter"
 			},
 			{
 				"command": "extension.Guard",
-				"title": "📦 Nest-S: Guard"
+				"title": "📦 Nest: Guard"
+			},
+			{
+				"command": "extension.Manager",
+				"title": "📦 Nest: Manager"
 			},
 			{
 				"command": "extension.Interceptor",
-				"title": "📦 Nest-S: Interceptor"
+				"title": "📦 Nest: Interceptor"
 			},
 			{
 				"command": "extension.Pipe",
-				"title": "📦 Nest-S: Pipe"
+				"title": "📦 Nest: Pipe"
 			}
 		],
 		"menus": {
@@ -127,6 +137,16 @@
 				},
 				{
 					"command": "extension.DTO",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/",
+					"group": "9_cutcopypaste"
+				},
+				{
+					"command": "extension.DAO",
+					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/",
+					"group": "9_cutcopypaste"
+				},
+				{
+					"command": "extension.Manager",
 					"when": "explorerResourceIsFolder && resourceFilename != modules && resourcePath =~ /modules/",
 					"group": "9_cutcopypaste"
 				},

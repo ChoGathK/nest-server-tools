@@ -1,5 +1,6 @@
 /**
- * 业务逻辑提供者（Provider）
+ * 数据访问层（Data Access Object - DAO）
+ * 只负责与数据库进行交互。
  */
 
 import { Injectable } from '@nestjs/common';
@@ -13,7 +14,7 @@ import { Injectable } from '@nestjs/common';
 import { Create{{ upperName }}DTO, Find{{ upperName }}DTO, Paginated{{ upperName }}DTO, Update{{ upperName }}DTO } from '../dto';
 
 @Injectable()
-export class {{ upperName }}Provider {
+export class {{ upperName }}DAO {
   /** 单条查询 */
   public async findOne(dto: Find{{ upperName }}DTO) {
     const { condition } = {{ upperName }}.getConditionByDTO(dto);

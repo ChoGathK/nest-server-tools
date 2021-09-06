@@ -12,28 +12,28 @@
 
 | `navigation` |
 | --------------------------------|
-| 🏗  Nest-S: New Module              |
-| 🏗  Nest-S: New Extend              |
-
+| 🏗  Nest: New Module              |
+| 🏗  Nest: New Extend              |
 | `modification` |
 | ------------------------------- |
-| 📁  Nest-S: Shared                  |
-| 📁  Nest-S: Common                  |
-| 📄  Nest-S: module                  |
-| 📄  Nest-S: sequelize               |
-
+| 📁  Nest: Shared                  |
+| 📁  Nest: Common                  |
+| 📄  Nest: module                  |
+| 📄  Nest: entity                  |
 | `commands` |
-| --------------------------------|
-| 📦  Nest-S: BO                      |
-| 📦  Nest-S: Decorator               |
-| 📦  Nest-S: DTO                     |
-| 📦  Nest-S: Controller              |
-| 📦  Nest-S: Filter                  |
-| 📦  Nest-S: Guard                   |
-| 📦  Nest-S: Interceptor             |
-| 📦  Nest-S: Pipe                    |
-| 📦  Nest-S: Provider                |
-| 📦  Nest-S: Service                 |
+| -------------------------------- |
+| 📦  Nest: BO                      |
+| 📦  Nest: Decorator               |
+| 📦  Nest: DAO                     |
+| 📦  Nest: DTO                     |
+| 📦  Nest: Controller              |
+| 📦  Nest: Filter                  |
+| 📦  Nest: Guard                   |
+| 📦  Nest: Interceptor             |
+| 📦  Nest: Manager                 |
+| 📦  Nest: Pipe                    |
+| 📦  Nest: Provider                |
+| 📦  Nest: Service                 |
 
 2. 点击指定功能，将弹出输入框，输入文本后会创建对应的模块/目录/文件
 
@@ -51,35 +51,37 @@
 
 ## Common
 
-> 请将使用 Nest-Server 创建的项目放置于独立的 vscode 工作区，确保您有最好的开发体验 ☺️
+> 请将使用 Nesterver 创建的项目放置于独立的 vscode 工作区，确保您有最好的开发体验 ☺️
 
-- 在 src - modules 下点击右键唤出菜单，可以看到 `🏗  Nest-S: New Module` 用于创建整个通用业务模块
-- 在 src - extends 下点击右键唤出菜单，可以看到 `🏗  Nest-S: New Extend` 用于创建整个通用拓展模块
+- 在 src - modules 下点击右键唤出菜单，可以看到 `🏗  Nest: New Module` 用于创建整个通用业务模块
+- 在 src - extends 下点击右键唤出菜单，可以看到 `🏗  Nest: New Extend` 用于创建整个通用拓展模块
 - 在 src - modules 的模块中点击右键唤出菜单，可以看到：
-  - `📁  Nest-S: Shared` 用于创建公共资源目录
-  - `📁  Nest-S: Common` 用于创建公共约定目录
-  - `📄  Nest-S: module` 用于创建模块注册表
-  - `📦  Nest-S: BO`     用于创建 BO
-  - `📦  Nest-S: DTO`    用于创建 DTO
-  - `📦  Nest-S: Controller` 用于创建 Controller
-  - `📦  Nest-S: Service` 用于创建 Service 
-  - `📦  Nest-S: Decorator` 用于创建 Decorator
-  - `📦  Nest-S: Filter` 用于创建 Filter
-  - `📦  Nest-S: Guard` 用于创建 Guard
-  - `📦  Nest-S: Interceptor` 用于创建 Interceptor
-  - `📦  Nest-S: Pipe` 用于创建 Pipe    
-  - `📦  Nest-S: Provider` 用于创建 Provider
+  - `📁  Nest: Shared` 用于创建公共资源目录
+  - `📁  Nest: Common` 用于创建公共约定目录
+  - `📄  Nest: module` 用于创建模块注册表
+  - `📦  Nest: BO`     用于创建 BO
+  - `📦  Nest: DTO`    用于创建 DTO
+  - `📦  Nest: DAO`    用于创建 DAO
+  - `📦  Nest: Controller` 用于创建 Controller
+  - `📦  Nest: Service` 用于创建 Service 
+  - `📦  Nest: Decorator` 用于创建 Decorator
+  - `📦  Nest: Filter` 用于创建 Filter
+  - `📦  Nest: Guard` 用于创建 Guard
+  - `📦  Nest: Interceptor` 用于创建 Interceptor
+  - `📦  Nest: Manager` 用于创建 Manager    
+  - `📦  Nest: Pipe` 用于创建 Pipe    
+  - `📦  Nest: Provider` 用于创建 Provider
 - 在 src - extends 的模块中点击右键唤出菜单，可以看到：
-  - `📁  Nest-S: Shared` 用于创建公共资源目录
-  - `📁  Nest-S: Common` 用于创建公共约定目录
-  - `📄  Nest-S: module` 用于创建模块注册表
-  - `📦  Nest-S: Decorator` 用于创建 Decorator
-  - `📦  Nest-S: Filter` 用于创建 Filter
-  - `📦  Nest-S: Guard` 用于创建 Guard
-  - `📦  Nest-S: Interceptor` 用于创建 Interceptor
-  - `📦  Nest-S: Pipe` 用于创建 Pipe    
-  - `📦  Nest-S: Provider` 用于创建 Provider
-- 在 src - extends - sequelize - shared 目录中点击右键唤出菜单，可以看到：`📄  Nest-S: sequelize` 用于创建 sequelize model 模板
+  - `📁  Nest: Shared` 用于创建公共资源目录
+  - `📁  Nest: Common` 用于创建公共约定目录
+  - `📄  Nest: module` 用于创建模块注册表
+  - `📦  Nest: Decorator` 用于创建 Decorator
+  - `📦  Nest: Filter` 用于创建 Filter
+  - `📦  Nest: Guard` 用于创建 Guard
+  - `📦  Nest: Interceptor` 用于创建 Interceptor
+  - `📦  Nest: Pipe` 用于创建 Pipe    
+  - `📦  Nest: Provider` 用于创建 Provider
+- 在 src - extends - sequelize - shared 目录中点击右键唤出菜单，可以看到：`📄  Nest: entity` 用于创建 sequelize model 模板
 
 ## License
 

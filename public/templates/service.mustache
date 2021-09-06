@@ -5,41 +5,41 @@
 import { Injectable } from '@nestjs/common';
 
 import { Create{{ upperName }}DTO, Find{{ upperName }}DTO, Paginated{{ upperName }}DTO, Update{{ upperName }}DTO } from '../dto';
-import { {{ upperName }}Provider } from '../provider';
+import { {{ upperName }}DAO } from '../dao';
 
 @Injectable()
 export class {{ upperName }}Service {
   constructor(
-    private readonly {{ fileName }}Provider: {{ upperName }}Provider,
+    private readonly {{ fileName }}DAO: {{ upperName }}DAO,
   ) {}
 
   /** 单条查询 */
   public async findOne(dto: Find{{ upperName }}DTO) {
-    return this.{{ fileName }}Provider.findOne(dto);
+    return this.{{ fileName }}DAO.findOne(dto);
   }
 
   /** 多条查询 */
   public async findAll(dto: Find{{ upperName }}DTO) {
-    return this.{{ fileName }}Provider.findAll(dto);
+    return this.{{ fileName }}DAO.findAll(dto);
   }
 
   /** 分页查询 */
   public async paginated(dto: Paginated{{ upperName }}DTO) {
-    return this.{{ fileName }}Provider.paginated(dto);
+    return this.{{ fileName }}DAO.paginated(dto);
   }
 
   /** 创建 */
   public async create(dto: Create{{ upperName }}DTO) {
-    return this.{{ fileName }}Provider.create(dto);
+    return this.{{ fileName }}DAO.create(dto);
   }
 
   /** 更新 */
   public async update(id: string, dto: Update{{ upperName }}DTO) {
-    return this.{{ fileName }}Provider.update(id, dto);
+    return this.{{ fileName }}DAO.update(id, dto);
   }
 
   /** 按主键ID删除 */
   public async delete(id: string) {
-    return this.{{ fileName }}Provider.delete(id);
+    return this.{{ fileName }}DAO.delete(id);
   }
 }
