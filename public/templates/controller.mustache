@@ -2,7 +2,7 @@
  * 业务逻辑控制层（Controller）
  */
 
-import { HTTP_STATUS, IHttpResponsePaginated } from '@/common';
+import { HTTP_STATUS, IResponsePaginated } from '@/common';
 import { ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Body, Controller, Get, HttpCode, HttpException, Param, Post, Query } from '@nestjs/common';
 import { ApiPaginatedResponseBO, ApiListResponseBO, ApiResponseBO } from '@/extends/swagger';
@@ -36,7 +36,7 @@ export class {{ upperName }}Controller {
   @ApiOperation({ summary: '分页查询 - {{ upperName }}' })
   @ApiPaginatedResponseBO({{ upperName }}BO)
   @Get('/paginated')
-  public async paginated(@Query() dto: Paginated{{ upperName }}DTO): Promise<IHttpResponsePaginated<{{ upperName }}BO>> {
+  public async paginated(@Query() dto: Paginated{{ upperName }}DTO): Promise<IResponsePaginated<{{ upperName }}BO>> {
     return this.{{ fileName }}.paginated(dto);
   }
 
@@ -53,7 +53,7 @@ export class {{ upperName }}Controller {
   @Post('/update/:id')
   @HttpCode(HTTP_STATUS.SUCCESS)
   public async update(@Param('id') id: string, @Body() dto: Update{{ upperName }}DTO): Promise<void> {
-    if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.PARAM_UNPROCESSABLE);
+    if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.UNPROCESSABLE);
     return this.{{ fileName }}.update(id, dto);
   }
 
@@ -62,7 +62,7 @@ export class {{ upperName }}Controller {
   @Post('/delete/:id')
   @HttpCode(HTTP_STATUS.SUCCESS)
   public async delete(@Param('id') id: string): Promise<void> {
-    if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.PARAM_UNPROCESSABLE);
+    if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.UNPROCESSABLE);
     return this.{{ fileName }}.delete(id);
   }
 }

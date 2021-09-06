@@ -64,8 +64,8 @@ export class CommandHander {
         this.createFolder(input, this.topic);
         return;
       }
-    } catch (error) {
-      window.showErrorMessage(error);
+    } catch (error: any) {
+      window.showErrorMessage(error.message);
     }
   }
 
@@ -120,7 +120,7 @@ export class CommandHander {
     this.createFolder(input,`${input}/provider`, 'service-provider');
     this.updateBarrelFile(input, `${input}/provider`, 'provider');
 
-    this.createFile(input, 'module', input);
+    this.createFile(input, 'service-module', input);
   }
 
   /** 初始化 Extends 模块 */
@@ -144,8 +144,16 @@ export class CommandHander {
 
   /** 创建文件 */
   private createFile(input: string, topic: string, specified = '') {
-    const fileName = topic === 'module' ? 'module' : TextUtils.upperCaseToLine(input);
+    let fileName = '';
 
+    if (topic === 'module') {
+      fileName = 'module';
+    } else if (topic === 'service-module') {
+      fileName = 'module';
+    } else {
+      fileName = TextUtils.upperCaseToLine(input);
+    }
+    
     const upperName = input.includes('-')
       ? TextUtils.firstToUpperCase(TextUtils.lineToUpperCase(input))
       : TextUtils.firstToUpperCase(input);
