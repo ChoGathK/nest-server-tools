@@ -13,10 +13,10 @@
 	"icon": "public/images/icon.png",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sophons-space/nest-server-tools"
+		"url": "https://github.com/ChoGathK/nest-server-tools"
 	},
 	"bugs": {
-		"url": "https://github.com/sophons-space/nest-server-tools/issues",
+		"url": "https://github.com/ChoGathK/nest-server-tools/issues",
 		"email": "chogath@163.com"
 	},
 	"activationEvents": [
