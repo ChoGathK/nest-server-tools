@@ -4,7 +4,7 @@
 
 ## Architecture
 
-[* 架构图](https://github.com/sophons-space/nest-server/blob/master/public/doc/architecture.md#%E6%9E%B6%E6%9E%84%E5%9B%BE)
+[* 整体介绍](https://github.com/ChoGathK/nest-server/blob/master/public/doc/architecture.md)
 
 ## Features
 
