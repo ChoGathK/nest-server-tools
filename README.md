@@ -55,8 +55,16 @@
 
 > 请将使用 Nesterver 创建的项目放置于独立的 vscode 工作区，确保您有最好的开发体验 ☺️
 
+### 创建整个通用业务模块
+
 - 在 src - modules 下点击右键唤出菜单，可以看到 `🏗  Nest: New Module` 用于创建整个通用业务模块
+
+### 创建整个通用拓展模块
+
 - 在 src - extends 下点击右键唤出菜单，可以看到 `🏗  Nest: New Extend` 用于创建整个通用拓展模块
+
+### 在 业务模块 中增加功能
+
 - 在 src - modules 的模块中点击右键唤出菜单，可以看到：
   - `📁  Nest: Shared` 用于创建公共资源目录
   - `📁  Nest: Common` 用于创建公共约定目录
@@ -73,6 +81,9 @@
   - `📦  Nest: Manager` 用于创建 Manager    
   - `📦  Nest: Pipe` 用于创建 Pipe    
   - `📦  Nest: Provider` 用于创建 Provider
+
+### 在 拓展模块 中增加功能
+
 - 在 src - extends 的模块中点击右键唤出菜单，可以看到：
   - `📁  Nest: Shared` 用于创建公共资源目录
   - `📁  Nest: Common` 用于创建公共约定目录
@@ -83,6 +94,9 @@
   - `📦  Nest: Interceptor` 用于创建 Interceptor
   - `📦  Nest: Pipe` 用于创建 Pipe    
   - `📦  Nest: Provider` 用于创建 Provider
+
+### 在 拓展模块 中增加 sequelize model
+
 - 在 src - extends - sequelize - shared 目录中点击右键唤出菜单，可以看到：`📄  Nest: entity` 用于创建 sequelize model 模板
 
 ## License
