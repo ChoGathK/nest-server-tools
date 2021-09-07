@@ -1,6 +1,12 @@
 /**
- * 数据访问层（Data Access Object - DAO）
- * 只负责与数据库进行交互。
+ * DAO (Data Access Object - 数据访问层)
+ *
+ * 当前层级负责封装与数据库的交互。
+ *
+ * 本层的使用场景有：
+ *
+ * 1. 封装 SQL/数据库交互命令 并获取返回值。
+ * 2. 封装 Extends 模块内 Entity 层的调用 (包含但不限于 sequelize/mongoose)
  */
 
 import { Injectable } from '@nestjs/common';

@@ -1,16 +1,14 @@
 /**
- * 数据传输对象（Data Transger Object - DTO）
- * 指服务端请求过程中的数据载体
+ * DTO (Data Transger Object - 数据传输对象)
+ *
+ * 负责定义外部输入的数据参数定义/类型/校验规则
  */
 
 import { IsNotEmpty } from 'class-validator';
 import { HttpRequestPageDTO } from '@/extends/swagger';
 import { ApiProperty, OmitType, PartialType } from '@nestjs/swagger';
 
-/**
- * 建议引入 Entity (ORM) 中定义的接口
- * 可以是 sequelize/mongoose/typeorm/或者其他提前定义好的拓展模块。
- */
+// 建议引入 Entity (ORM) 中定义的接口
 // import { I{{ upperName }} } from '@/extends/sequelize';
 
 /** 分页查询 */

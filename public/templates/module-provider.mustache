@@ -1,6 +1,12 @@
 /**
- * 业务调用提供层（Provider）
- * 封装 Extends 模块内 Provider 的业务调用
+ * Provider (调用提供层)
+ *
+ * 当前层级负责封装 Extends 模块内 Provider 的业务调用。
+ *
+ * 本层的使用场景有：
+ *
+ * 1. 作为 Client 端对其他 Server 进行 RPC 调用。
+ * 2. 作为 Client 端对中间件应用进行请求/调用（包括不限于 redis/mq/es）
  */
 
 import { Injectable } from '@nestjs/common';

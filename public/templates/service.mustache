@@ -1,5 +1,14 @@
 /**
- * 业务逻辑处理层（Service）
+ * Service (业务逻辑处理层)
+ *
+ * 当前层级负责定义对外暴露的能力，即本身可以完成哪些任务，并负责对内协调 Mananger/DAO 层来处理业务逻辑。
+ *
+ * 本层的使用场景有：
+ *
+ * 1. 对 Mananger 层的调用。
+ * 2. 与 DAO 层交互（单个调用，简单的 CURD 场景）。
+ *
+ * 当设计复杂业务场景时，应该考虑将 Service 下沉为 Manager (优化后置 = 不优化 = 后人填坑)
  */
 
 import { Injectable } from '@nestjs/common';
