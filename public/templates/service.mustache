@@ -6,9 +6,9 @@
  * 本层的使用场景有：
  *
  * 1. 对 Mananger 层的调用。
- * 2. 与 DAO 层交互（单个调用，简单的 CURD 场景）。
+ * 2. 对 DAO 层的调用 (简单的 CURD 场景)
  *
- * 当设计复杂业务场景时，应该考虑将 Service 下沉为 Manager (优化后置 = 不优化 = 后人填坑)
+ * 当设计复杂业务场景时，应该考虑将 Service 部分处理逻辑下沉为 Manager
  */
 
 import { Injectable } from '@nestjs/common';
