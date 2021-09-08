@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { BaseConfig, ConfigFactoryProvider } from '@/extends/config';
 
-/** 工厂提供者（支持异步加载） */
+/** {{ upperName }} 工厂提供者（支持异步加载） */
 export class {{ upperName }}FactoryProvider {
   public static provide = '{{ upperName }}'
 
@@ -16,6 +16,6 @@ export class {{ upperName }}FactoryProvider {
   }
 }
 
-/** 普通提供者 */
+/** {{ upperName }} 提供者 */
 @Injectable()
 export class {{ upperName }}Provider {}
