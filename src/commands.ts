@@ -103,7 +103,7 @@ export class CommandHander {
 
   /** 初始化 Modules 模块 */
   private initModules(input: string) {
-    const topics = ['bo', 'dto', 'dao', 'manager', 'controller', 'service'];
+    const topics = ['bo', 'dto', 'dao', 'controller', 'service'];
 
     if (existsSync(`${this.resource.path}/${input}`)) {
       return window.showErrorMessage(`${this.resource.path}/${input} 已存在`);
@@ -116,9 +116,6 @@ export class CommandHander {
       this.createFolder(input,`${input}/${topic}`, topic);
       this.updateBarrelFile(input, `${input}/${topic}`, topic);
     }
-
-    this.createFolder(input,`${input}/provider`, 'module-provider');
-    this.updateBarrelFile(input, `${input}/provider`, 'provider');
 
     this.createFile(input, 'module', input);
   }

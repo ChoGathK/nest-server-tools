@@ -5,8 +5,9 @@
  *
  * 本层的使用场景有：
  *
- * 1. 作为 Client 端对其他 Server 进行 RPC 调用
- * 2. 作为 Client 端对中间件应用进行请求/调用（包括不限于 redis/mq/es）
+ * 1. 对其他服务端进行 RPC 调用（例如：http/grpc）
+ * 2. 对中间件进行请求/调用（例如：redis/mq/es）
+ * 3. 将通知推送到消息队列（例如：kafka/rocketMQ）
  */
 
 import { Injectable } from '@nestjs/common';
