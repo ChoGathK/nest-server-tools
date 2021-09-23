@@ -28,4 +28,4 @@ jobs:
     - run: npm install -g vsce
     - run: npm install
     - run: vsce package patch
-    - run: vsce publish --p ${{VSCODE_TOKEN}}
+    - run: vsce publish --p ${{ VSCODE_TOKEN }}
