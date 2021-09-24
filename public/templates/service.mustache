@@ -20,36 +20,36 @@ import { {{ upperName }}DAO } from '../dao';
 @Injectable()
 export class {{ upperName }}Service {
   constructor(
-    private readonly {{ fileName }}DAO: {{ upperName }}DAO,
+    private readonly DAO: {{ upperName }}DAO,
   ) {}
 
   /** 单条查询 */
   public async findOne(dto: Find{{ upperName }}DTO) {
-    return this.{{ fileName }}DAO.findOne(dto);
+    return this.DAO.findOne(dto);
   }
 
   /** 多条查询 */
   public async findAll(dto: Find{{ upperName }}DTO) {
-    return this.{{ fileName }}DAO.findAll(dto);
+    return this.DAO.findAll(dto);
   }
 
   /** 分页查询 */
   public async paginated(dto: Paginated{{ upperName }}DTO) {
-    return this.{{ fileName }}DAO.paginated(dto);
+    return this.DAO.paginated(dto);
   }
 
   /** 创建 */
   public async create(dto: Create{{ upperName }}DTO) {
-    return this.{{ fileName }}DAO.create(dto);
+    return this.DAO.create(dto);
   }
 
   /** 更新 */
   public async update(id: string, dto: Update{{ upperName }}DTO) {
-    return this.{{ fileName }}DAO.update(id, dto);
+    return this.DAO.update(id, dto);
   }
 
   /** 按主键ID删除 */
   public async delete(id: string) {
-    return this.{{ fileName }}DAO.delete(id);
+    return this.DAO.delete(id);
   }
 }
