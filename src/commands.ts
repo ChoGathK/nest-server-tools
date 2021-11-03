@@ -8,7 +8,7 @@ import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } fr
 import { TextUtils } from './utils';
 
 /** 指令处理器 */
-export class CommandHander {
+export class CommandHandler {
   /** 当前选中文件的上级目录地址 */
   private readonly parentDir: string;
 
@@ -71,18 +71,12 @@ export class CommandHander {
 
   /** 初始化 Common 目录 */
   private initCommon() {
-    const files = ['base', 'type', 'constant', 'enum', 'interface', 'index'];
-
     if (existsSync(`${this.resource.path}/common`)) {
       return window.showErrorMessage('common 目录已存在');
     }
 
     /** 创建模块目录 */
     mkdirSync(`${this.resource.path}/common`);
-
-    for (const file of files) {
-      writeFileSync(`${this.resource.path}/common/${file}.ts`, '');
-    }
   }
 
   /** 初始化 Shared 目录 */
@@ -204,8 +198,8 @@ export class CommandHander {
     writeFileSync(newFilePath, `${newFileData}\n`);
 
     const barrelPath = resolve(__dirname, `../public/templates/barrel.mustache`);
-    const barreleData = readFileSync(barrelPath, 'utf8');
-    const barrelFileData = render(barreleData, { fileName });
+    const barrelData = readFileSync(barrelPath, 'utf8');
+    const barrelFileData = render(barrelData, { fileName });
     const barrelFilePath = `${this.resource.path}/${topic}/index.ts`;
 
     if (existsSync(barrelFileData)) {

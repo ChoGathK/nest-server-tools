@@ -1,6 +1,6 @@
 /* eslint-disable curly */
 import * as vscode from 'vscode';
-import { CommandHander } from './commands';
+import { CommandHandler } from './commands';
 
 /**
  * 注册指令
@@ -10,7 +10,7 @@ import { CommandHander } from './commands';
  */
  export const registerCommand = (commandStr: string, topic: string, type: 'init' | 'add' = 'add') => {
   if (vscode.workspace === undefined) vscode.window.showErrorMessage('Please select a workspace first');
-  return vscode.commands.registerCommand(commandStr, (resource: vscode.Uri) => new CommandHander(topic, resource, type));
+  return vscode.commands.registerCommand(commandStr, (resource: vscode.Uri) => new CommandHandler(topic, resource, type));
 };
 
 export function activate(context: vscode.ExtensionContext) {
@@ -27,14 +27,9 @@ export function activate(context: vscode.ExtensionContext) {
 		/** 创建目录/文件 */
 		registerCommand('extension.BO', 'bo'),
 		registerCommand('extension.Controller', 'controller'),
-		registerCommand('extension.Decorator', 'decorator'),
 		registerCommand('extension.DTO', 'dto'),
 		registerCommand('extension.DAO', 'dao'),
 		registerCommand('extension.Manager', 'manager'),
-		registerCommand('extension.Filter', 'filter'),
-		registerCommand('extension.Guard', 'guard'),
-		registerCommand('extension.Interceptor', 'interceptor'),
-		registerCommand('extension.Pipe', 'pipe'),
 		registerCommand('extension.Provider', 'provider'),
 		registerCommand('extension.Service', 'service'),
 	);

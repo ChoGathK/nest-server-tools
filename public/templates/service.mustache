@@ -1,11 +1,9 @@
 /**
- * Service (业务逻辑处理层)
- *
- * 当前层级负责定义对外暴露的能力，即本身可以完成哪些任务，并负责对内协调 Mananger/Provider/DAO 层来处理业务逻辑
+ * Service (业务逻辑处理层) 负责定义对外暴露的能力，即本身可以完成哪些任务，并对内协调 Manager/Provider/DAO 层来处理业务逻辑
  *
  * 本层的使用场景有：
  *
- * 1. 对 Mananger 层的调用
+ * 1. 对 Manager 层的调用
  * 2. 对 Provider 层的调用
  * 3. 对 DAO 层的调用
  *
@@ -14,42 +12,51 @@
 
 import { Injectable } from '@nestjs/common';
 
-import { Create{{ upperName }}DTO, Find{{ upperName }}DTO, Paginated{{ upperName }}DTO, Update{{ upperName }}DTO } from '../dto';
-import { {{ upperName }}DAO } from '../dao';
-
 @Injectable()
-export class {{ upperName }}Service {
-  constructor(
-    private readonly DAO: {{ upperName }}DAO,
-  ) {}
+export class {{ upperName }}Service {}
 
-  /** 单条查询 */
-  public async findOne(dto: Find{{ upperName }}DTO) {
-    return this.DAO.findOne(dto);
-  }
+// import {
+//   Find{{ upperName }}DTO,
+//   Create{{ upperName }}DTO,
+//   Update{{ upperName }}DTO,
+//   Paginated{{ upperName }}DTO,
+// } from '../dto';
 
-  /** 多条查询 */
-  public async findAll(dto: Find{{ upperName }}DTO) {
-    return this.DAO.findAll(dto);
-  }
+// import { {{ upperName }}DAO } from '../dao';
 
-  /** 分页查询 */
-  public async paginated(dto: Paginated{{ upperName }}DTO) {
-    return this.DAO.paginated(dto);
-  }
+// @Injectable()
+// export class {{ upperName }}Service {
+//   constructor(
+//     private readonly DAO: {{ upperName }}DAO,
+//   ) {}
 
-  /** 创建 */
-  public async create(dto: Create{{ upperName }}DTO) {
-    return this.DAO.create(dto);
-  }
+//   /** 单条查询 */
+//   public async findOne(dto: Find{{ upperName }}DTO) {
+//     return this.DAO.findOne(dto);
+//   }
 
-  /** 更新 */
-  public async update(id: string, dto: Update{{ upperName }}DTO) {
-    return this.DAO.update(id, dto);
-  }
+//   /** 多条查询 */
+//   public async findAll(dto: Find{{ upperName }}DTO) {
+//     return this.DAO.findAll(dto);
+//   }
 
-  /** 按主键ID删除 */
-  public async delete(id: string) {
-    return this.DAO.delete(id);
-  }
-}
+//   /** 分页查询 */
+//   public async paginated(dto: Paginated{{ upperName }}DTO) {
+//     return this.DAO.paginated(dto);
+//   }
+
+//   /** 创建 */
+//   public async create(dto: Create{{ upperName }}DTO) {
+//     return this.DAO.create(dto);
+//   }
+
+//   /** 更新 */
+//   public async update(id: string, dto: Update{{ upperName }}DTO) {
+//     return this.DAO.update(id, dto);
+//   }
+
+//   /** 按主键ID删除 */
+//   public async delete(id: string) {
+//     return this.DAO.delete(id);
+//   }
+// }

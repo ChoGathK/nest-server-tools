@@ -1,17 +1,20 @@
 /**
- * BO (Business Object - 业务对象)
- *
- * 负责定义 Service 层对外输出的数据，或者是其他 Server 的返回数据
+ * BO (业务对象) 负责定义 Service 层对外输出的结果，或者是其他服务端的返回数据
  */
 
 import { ApiProperty } from '@nestjs/swagger';
 
-// 建议引入 Entity (ORM) 中定义的接口
-// import { I{{ upperName }} } from '@/extends/sequelize';
-
-export class {{ upperName }}BO
-// implements I{{ upperName }}
-{
-  @ApiProperty({ name: 'name', type: String, required: true, example: 'chogath', description: '名字' })
+export class {{ upperName }}BO {
+  @ApiProperty({ name: 'name', type: String, required: true, example: 'name', description: '名字' })
   name: string;
 }
+
+// // 通常建议引入 Entity 接口
+// import { I{{ upperName }} } from '@/extends/sequelize';
+
+// export class {{ upperName }}BO
+// implements I{{ upperName }}
+// {
+//   @ApiProperty({ name: 'name', type: String, required: true, example: 'name', description: '名字' })
+//   name: string;
+// }

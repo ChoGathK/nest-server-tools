@@ -1,80 +1,90 @@
 /**
- * Controller (业务逻辑控制层)
- *
- * 当前层级负责逻辑的控制与转发，并负责对内协调 Service 层来处理业务逻辑
+ * Controller (业务逻辑控制层) 负责逻辑的控制与转发，并负责对内协调 Service 层来处理业务逻辑
  *
  * 本层的使用场景有：
  *
- * 1. 定义 Router/Swagger/Cron
- * 2. 绑定 DTO (输入)
- * 3. 将业务处理转发到 Service 层
- * 4. 绑定 BO (输入)
+ * 1. 绑定装饰器
+ * 2. 绑定 DTO (输入)数据传输对象
+ * 3. 绑定 Service 层
+ * 4. 绑定 BO (输入)业务对象
  *
- * 不可以在 Controller 内直接调用 Mananger/Provider/DAO 层来处理业务逻辑
+ * 不允许在 Controller 内直接调用 Manager/Provider/DAO 层
  */
 
-
-import { HTTP_STATUS, IResponsePaginated } from '@/common';
-import { ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { Body, Controller, Get, HttpCode, HttpException, Param, Post, Query } from '@nestjs/common';
-import { ApiPaginatedResponseBO, ApiListResponseBO, ApiResponseBO } from '@/extends/swagger';
-
-import { Create{{ upperName }}DTO, Find{{ upperName }}DTO, Paginated{{ upperName }}DTO, Update{{ upperName }}DTO } from '../dto';
-import { {{ upperName }}Service } from '../service';
-import { {{ upperName }}BO } from '../bo';
+import { ApiTags } from '@nestjs/swagger';
+import { Controller } from '@nestjs/common';
 
 @ApiTags('{{ upperName }}')
 @Controller('{{ fileName }}')
-@ApiExtraModels({{ upperName }}BO)
-export class {{ upperName }}Controller {
-  constructor(
-    private readonly service: {{ upperName }}Service,
-  ) {}
+export class {{ upperName }}Controller {}
 
-  @ApiOperation({ summary: '查询详情 - {{ upperName }}' })
-  @ApiResponseBO({{ upperName }}BO)
-  @Get('/find/one')
-  public async findOne(@Query() dto: Find{{ upperName }}DTO): Promise<{{ upperName }}BO> {
-    return this.service.findOne(dto);
-  }
+// import { HTTP_STATUS, IResponsePaginated } from '@/common';
+// import { ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger';
+// import { ApiPaginatedResponseBO, ApiListResponseBO, ApiResponseBO } from '@/extends/swagger';
+// import { Controller, Get, Post, Query, Body, Param, HttpCode, HttpException } from '@nestjs/common';
 
-  @ApiOperation({ summary: '查询全部 - {{ upperName }}' })
-  @ApiListResponseBO({{ upperName }}BO)
-  @Get('/find/all')
-  public async findAll(@Query() dto: Find{{ upperName }}DTO): Promise<{{ upperName }}BO[]> {
-    return this.service.findAll(dto);
-  }
+// import {
+//   Find{{ upperName }}DTO,
+//   Create{{ upperName }}DTO,
+//   Update{{ upperName }}DTO,
+//   Paginated{{ upperName }}DTO,
+// } from '../dto';
 
-  @ApiOperation({ summary: '分页查询 - {{ upperName }}' })
-  @ApiPaginatedResponseBO({{ upperName }}BO)
-  @Get('/paginated')
-  public async paginated(@Query() dto: Paginated{{ upperName }}DTO): Promise<IResponsePaginated<{{ upperName }}BO>> {
-    return this.service.paginated(dto);
-  }
+// import { {{ upperName }}BO } from '../bo';
+// import { {{ upperName }}Service } from '../service';
 
-  @ApiOperation({ summary: '创建 - {{ upperName }}' })
-  @ApiResponseBO({{ upperName }}BO)
-  @Post('/create')
-  @HttpCode(HTTP_STATUS.SUCCESS)
-  public async create(@Body() dto: Create{{ upperName }}DTO): Promise<{{ upperName }}BO> {
-    return this.service.create(dto);
-  }
+// @ApiTags('{{ upperName }}')
+// @Controller('{{ fileName }}')
+// @ApiExtraModels({{ upperName }}BO)
+// export class {{ upperName }}Controller {
+//   constructor(
+//     private readonly service: {{ upperName }}Service,
+//   ) {}
 
-  @ApiOperation({ summary: '更新 - {{ upperName }}' })
-  @ApiResponseBO()
-  @Post('/update/:id')
-  @HttpCode(HTTP_STATUS.SUCCESS)
-  public async update(@Param('id') id: string, @Body() dto: Update{{ upperName }}DTO): Promise<void> {
-    if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.UNPROCESSABLE);
-    return this.service.update(id, dto);
-  }
+//   @ApiOperation({ summary: '查询详情 - {{ upperName }}' })
+//   @ApiResponseBO({{ upperName }}BO)
+//   @Get('/find/one')
+//   public async findOne(@Query() dto: Find{{ upperName }}DTO): Promise<{{ upperName }}BO> {
+//     return this.service.findOne(dto);
+//   }
 
-  @ApiOperation({ summary: '删除 - {{ upperName }}' })
-  @ApiResponseBO()
-  @Post('/delete/:id')
-  @HttpCode(HTTP_STATUS.SUCCESS)
-  public async delete(@Param('id') id: string): Promise<void> {
-    if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.UNPROCESSABLE);
-    return this.service.delete(id);
-  }
-}
+//   @ApiOperation({ summary: '查询全部 - {{ upperName }}' })
+//   @ApiListResponseBO({{ upperName }}BO)
+//   @Get('/find/all')
+//   public async findAll(@Query() dto: Find{{ upperName }}DTO): Promise<{{ upperName }}BO[]> {
+//     return this.service.findAll(dto);
+//   }
+
+//   @ApiOperation({ summary: '分页查询 - {{ upperName }}' })
+//   @ApiPaginatedResponseBO({{ upperName }}BO)
+//   @Get('/paginated')
+//   public async paginated(@Query() dto: Paginated{{ upperName }}DTO): Promise<IResponsePaginated<{{ upperName }}BO>> {
+//     return this.service.paginated(dto);
+//   }
+
+//   @ApiOperation({ summary: '创建 - {{ upperName }}' })
+//   @ApiResponseBO({{ upperName }}BO)
+//   @Post('/create')
+//   @HttpCode(HTTP_STATUS.SUCCESS)
+//   public async create(@Body() dto: Create{{ upperName }}DTO): Promise<{{ upperName }}BO> {
+//     return this.service.create(dto);
+//   }
+
+//   @ApiOperation({ summary: '更新 - {{ upperName }}' })
+//   @ApiResponseBO()
+//   @Post('/update/:id')
+//   @HttpCode(HTTP_STATUS.SUCCESS)
+//   public async update(@Param('id') id: string, @Body() dto: Update{{ upperName }}DTO): Promise<void> {
+//     if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.UNPROCESSABLE);
+//     return this.service.update(id, dto);
+//   }
+
+//   @ApiOperation({ summary: '删除 - {{ upperName }}' })
+//   @ApiResponseBO()
+//   @Post('/delete/:id')
+//   @HttpCode(HTTP_STATUS.SUCCESS)
+//   public async delete(@Param('id') id: string): Promise<void> {
+//     if (!id) throw new HttpException('请求参数有误，缺少 id', HTTP_STATUS.UNPROCESSABLE);
+//     return this.service.delete(id);
+//   }
+// }

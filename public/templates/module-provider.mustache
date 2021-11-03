@@ -1,11 +1,9 @@
 /**
- * Provider (调用提供层)
- *
- * 当前层级负责封装 Extends 模块内 Provider 的业务调用
+ * Provider (调用提供层) 负责封装 Extends 模块的业务调用
  *
  * 本层的使用场景有：
  *
- * 1. 对其他服务端进行 RPC 调用（例如：http/grpc）
+ * 1. 对其他服务端进行调用（例如：http/grpc）
  * 2. 对中间件进行请求/调用（例如：redis/mq/es）
  * 3. 将通知推送到消息队列（例如：kafka/rocketMQ）
  */

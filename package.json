@@ -3,7 +3,7 @@
 	"displayName": "Nest-Server-Tools",
 	"publisher": "chogath",
 	"description": "🦁 帮助 nest-server 开发者在 vscode 中快速创建模板/目录/文件",
-	"version": "0.2.8",
+	"version": "0.3.0",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
@@ -25,17 +25,13 @@
 		"onCommand:extension.Common",
 		"onCommand:extension.DTO",
 		"onCommand:extension.DAO",
-		"onCommand:extension.Decorator",
 		"onCommand:extension.Extends",
 		"onCommand:extension.Filter",
-		"onCommand:extension.Guard",
-		"onCommand:extension.Interceptor",
 		"onCommand:extension.Module.File",
 		"onCommand:extension.Shared",
 		"onCommand:extension.Sequelize.File",
 		"onCommand:extension.Modules",
 		"onCommand:extension.Manager",
-		"onCommand:extension.Pipe",
 		"onCommand:extension.Provider",
 		"onCommand:extension.Service"
 	],
@@ -82,10 +78,6 @@
 				"title": "📦 Nest: DAO"
 			},
 			{
-				"command": "extension.Decorator",
-				"title": "📦 Nest: Decorator"
-			},
-			{
 				"command": "extension.Controller",
 				"title": "📦 Nest: Controller"
 			},
@@ -98,24 +90,8 @@
 				"title": "📦 Nest: Provider"
 			},
 			{
-				"command": "extension.Filter",
-				"title": "📦 Nest: Filter"
-			},
-			{
-				"command": "extension.Guard",
-				"title": "📦 Nest: Guard"
-			},
-			{
 				"command": "extension.Manager",
 				"title": "📦 Nest: Manager"
-			},
-			{
-				"command": "extension.Interceptor",
-				"title": "📦 Nest: Interceptor"
-			},
-			{
-				"command": "extension.Pipe",
-				"title": "📦 Nest: Pipe"
 			}
 		],
 		"menus": {
@@ -161,32 +137,7 @@
 					"group": "9_cutcopypaste"
 				},
 				{
-					"command": "extension.Filter",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
-					"group": "9_cutcopypaste"
-				},
-				{
-					"command": "extension.Interceptor",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
-					"group": "9_cutcopypaste"
-				},
-				{
-					"command": "extension.Pipe",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
-					"group": "9_cutcopypaste"
-				},
-				{
-					"command": "extension.Guard",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
-					"group": "9_cutcopypaste"
-				},
-				{
 					"command": "extension.Provider",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
-					"group": "9_cutcopypaste"
-				},
-				{
-					"command": "extension.Decorator",
 					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
 					"group": "9_cutcopypaste"
 				},

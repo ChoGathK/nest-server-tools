@@ -4,32 +4,24 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class {{ upperName }}Provider {}
 
-// import { BaseConfig, ConfigProvider } from '@/extends/config';
-
 // /**
-//  * {{ upperName }} 自定义提供者
+//  * {{ upperName }} 提供者
 //  *
 //  * @example:
 //  *  @Inject({{ upperName }}Provider.provide)
-//  *  private readonly name: 返回的对象类型
+//  *  private readonly {{ fileName }}: I{{ upperName }}Provider
 //  *
-//  * 自定义提供者类型：
-//  *
-//  * @see: 工厂提供者 - useFactory
-//  * @see: 别名提供者 - useExisting
-//  * @see: 类提供者 - useClass
-//  * @see: 值提供者 - useValue
+//  * @example:
+//  *  inject: [{{ upperName }}Provider.provide]
 //  */
-// export class {{ upperName }}Provider {
-//   public static readonly provide = this.name;
+// export class AProvider {
+//   public static readonly provide = Symbol('{{ upperName }}Provider');
 
 //   public static getProvider() {
 //     return {
+//       inject: [],
 //       provide: this.provide,
-//       inject: [ConfigProvider],
-//       useFactory: async (config: BaseConfig) => {
-//         // const options = config.get();
-//       },
+//       useFactory: async () => {},
 //     };
 //   }
 // }

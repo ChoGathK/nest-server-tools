@@ -25,15 +25,10 @@
 | `commands` |
 | -------------------------------- |
 | 📦  Nest: BO                      |
-| 📦  Nest: Decorator               |
 | 📦  Nest: DAO                     |
 | 📦  Nest: DTO                     |
 | 📦  Nest: Controller              |
-| 📦  Nest: Filter                  |
-| 📦  Nest: Guard                   |
-| 📦  Nest: Interceptor             |
 | 📦  Nest: Manager                 |
-| 📦  Nest: Pipe                    |
 | 📦  Nest: Provider                |
 | 📦  Nest: Service                 |
 
@@ -74,12 +69,7 @@
   - `📦  Nest: DAO`    用于创建 DAO
   - `📦  Nest: Controller` 用于创建 Controller
   - `📦  Nest: Service` 用于创建 Service 
-  - `📦  Nest: Decorator` 用于创建 Decorator
-  - `📦  Nest: Filter` 用于创建 Filter
-  - `📦  Nest: Guard` 用于创建 Guard
-  - `📦  Nest: Interceptor` 用于创建 Interceptor
   - `📦  Nest: Manager` 用于创建 Manager    
-  - `📦  Nest: Pipe` 用于创建 Pipe    
   - `📦  Nest: Provider` 用于创建 Provider
 
 ### 在 拓展模块 中增加功能
@@ -88,11 +78,6 @@
   - `📁  Nest: Shared` 用于创建公共资源目录
   - `📁  Nest: Common` 用于创建公共约定目录
   - `📄  Nest: module` 用于创建模块注册表
-  - `📦  Nest: Decorator` 用于创建 Decorator
-  - `📦  Nest: Filter` 用于创建 Filter
-  - `📦  Nest: Guard` 用于创建 Guard
-  - `📦  Nest: Interceptor` 用于创建 Interceptor
-  - `📦  Nest: Pipe` 用于创建 Pipe    
   - `📦  Nest: Provider` 用于创建 Provider
 
 ### 在 拓展模块 中增加 sequelize model

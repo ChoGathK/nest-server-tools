@@ -1,45 +1,50 @@
 /**
- * DTO (Data Transger Object - 数据传输对象)
- *
- * 负责定义外部输入的数据参数定义/类型/校验规则
+ * DTO (数据传输对象) 负责定义外部输入的数据参数定义/类型/校验规则
  */
 
-import { IsNotEmpty } from 'class-validator';
-import { HttpRequestPageDTO } from '@/extends/swagger';
-import { ApiProperty, OmitType, PartialType } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 
-// 建议引入 Entity (ORM) 中定义的接口
-// import { I{{ upperName }} } from '@/extends/sequelize';
-
-/** 分页查询 */
-export class Paginated{{ upperName }}DTO
-  extends HttpRequestPageDTO
-  // implements I{{ upperName }}
-{
-  @ApiProperty({ name: 'name', type: String, required: false, example: 'chogath', description: '名字' })
-  name?: string;
-}
-
-/** 单条/多条查询 */
-export class Find{{ upperName }}DTO
-  extends OmitType(
-    Paginated{{ upperName }}DTO,
-    ['index', 'size', 'orderBy', 'orderRule'],
-  )
-  // implements I{{ upperName }}
-{}
-
-/** 创建 */
-export class Create{{ upperName }}DTO
-// implements I{{ upperName }}
-{
-  @IsNotEmpty()
-  @ApiProperty({ name: 'name', type: String, required: true, example: 'chogath', description: '名字' })
+export class {{ upperName }}DTO {
+  @ApiProperty({ name: 'name', type: String, required: true, example: 'name', description: '名字' })
   name: string;
 }
 
-/** 更新 */
-export class Update{{ upperName }}DTO
-  extends PartialType(Create{{ upperName }}DTO)
-  // implements I{{ upperName }}
-{}
+// import { IsNotEmpty } from 'class-validator';
+// import { HttpRequestPageDTO } from '@/extends/swagger';
+// import { ApiProperty, OmitType, PartialType } from '@nestjs/swagger';
+
+// // 通常建议引入 Entity 接口
+// import { I{{ upperName }} } from '@/extends/sequelize';
+
+// /** 分页查询 */
+// export class Paginated{{ upperName }}DTO
+//   extends HttpRequestPageDTO
+//   implements I{{ upperName }}
+// {
+//   @ApiProperty({ name: 'name', type: String, required: false, example: 'name', description: '名字' })
+//   name?: string;
+// }
+
+// /** 单条/多条查询 */
+// export class Find{{ upperName }}DTO
+//   extends OmitType(
+//     Paginated{{ upperName }}DTO,
+//     ['index', 'size', 'orderBy', 'orderRule'],
+//   )
+//   implements I{{ upperName }}
+// {}
+
+// /** 创建 */
+// export class Create{{ upperName }}DTO
+// implements I{{ upperName }}
+// {
+//   @IsNotEmpty()
+//   @ApiProperty({ name: 'name', type: String, required: true, example: 'name', description: '名字' })
+//   name: string;
+// }
+
+// /** 更新 */
+// export class Update{{ upperName }}DTO
+//   extends PartialType(Create{{ upperName }}DTO)
+//   implements I{{ upperName }}
+// {}

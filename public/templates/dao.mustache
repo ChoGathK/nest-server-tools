@@ -1,7 +1,5 @@
 /**
- * DAO (Data Access Object - 数据访问层)
- *
- * 当前层级负责封装与数据库的交互
+ * DAO (数据访问层) 负责封装与数据库的交互
  *
  * 本层的使用场景有：
  *
@@ -11,49 +9,61 @@
 
 import { Injectable } from '@nestjs/common';
 
-// 建议引入 Entity (ORM) 中定义的接口
+@Injectable()
+export class {{ upperName }}DAO {}
+
+// // 通常建议引入 Entity
 // import { {{ upperName }} } from '@/extends/sequelize';
 
-import { Create{{ upperName }}DTO, Find{{ upperName }}DTO, Paginated{{ upperName }}DTO, Update{{ upperName }}DTO } from '../dto';
+// import {
+//   Find{{ upperName }}DTO,
+//   Create{{ upperName }}DTO,
+//   Update{{ upperName }}DTO,
+//   Paginated{{ upperName }}DTO,
+// } from '../dto';
 
-@Injectable()
-export class {{ upperName }}DAO {
-  /** 单条查询 */
-  public async findOne(dto: Find{{ upperName }}DTO) {
-    const { condition } = {{ upperName }}.getConditionByDTO(dto);
-    const result = await {{ upperName }}.findOne({ where: condition });
-    return result;
-  }
+// @Injectable()
+// export class {{ upperName }}DAO {
+//   constructor(
+//     private readonly entity = {{ upperName }},
+//   ) {}
 
-  /** 多条查询 */
-  public async findAll(dto: Find{{ upperName }}DTO) {
-    const { condition } = {{ upperName }}.getConditionByDTO(dto);
-    const result = await {{ upperName }}.findAll({ where: condition });
-    return result;
-  }
+//   /** 单条查询 */
+//   public async findOne(dto: Find{{ upperName }}DTO) {
+//     const { condition } = this.entity.getConditionByDTO(dto);
+//     const result = await this.entity.findOne({ where: condition });
+//     return result;
+//   }
 
-  /** 分页查询 */
-  public async paginated(dto: Paginated{{ upperName }}DTO) {
-    const { condition, page } = {{ upperName }}.getConditionByDTO(dto);
-    const result = await {{ upperName }}.paginated({ page, where: condition });
-    return result;
-  }
+//   /** 多条查询 */
+//   public async findAll(dto: Find{{ upperName }}DTO) {
+//     const { condition } = this.entity.getConditionByDTO(dto);
+//     const result = await this.entity.findAll({ where: condition });
+//     return result;
+//   }
 
-  /** 创建 */
-  public async create(dto: Create{{ upperName }}DTO) {
-    const { entity } = {{ upperName }}.getEntityByDTO(dto);
-    const result = await {{ upperName }}.create(entity);
-    return result;
-  }
+//   /** 分页查询 */
+//   public async paginated(dto: Paginated{{ upperName }}DTO) {
+//     const { condition, page } = this.entity.getConditionByDTO(dto);
+//     const result = await this.entity.paginated({ page, where: condition });
+//     return result;
+//   }
 
-  /** 更新 */
-  public async update(id: string, dto: Update{{ upperName }}DTO) {
-    const { entity } = {{ upperName }}.getEntityByDTO(dto);
-    await {{ upperName }}.update(entity, { where: { id }});
-  }
+//   /** 创建 */
+//   public async create(dto: Create{{ upperName }}DTO) {
+//     const { entity } = this.entity.getEntityByDTO(dto);
+//     const result = await this.entity.create(entity);
+//     return result;
+//   }
 
-  /** 按主键ID删除 */
-  public async delete(id: string) {
-    await {{ upperName }}.destroy({ where: { id }});
-  }
-}
+//   /** 更新 */
+//   public async update(id: string, dto: Update{{ upperName }}DTO) {
+//     const { entity } = this.entity.getEntityByDTO(dto);
+//     await this.entity.update(entity, { where: { id }});
+//   }
+
+//   /** 按主键ID删除 */
+//   public async delete(id: string) {
+//     await this.entity.destroy({ where: { id }});
+//   }
+// }
