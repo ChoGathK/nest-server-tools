@@ -30,35 +30,35 @@ export class {{ upperName }}DAO {}
 
 //   /** 单条查询 */
 //   public async findOne(dto: Find{{ upperName }}DTO) {
-//     const { condition } = this.entity.getConditionByDTO(dto);
+//     const { condition } = this.entity.getConditionByDTO<Find{{ upperName }}DTO>(dto);
 //     const result = await this.entity.findOne({ where: condition });
 //     return result;
 //   }
 
 //   /** 多条查询 */
 //   public async findAll(dto: Find{{ upperName }}DTO) {
-//     const { condition } = this.entity.getConditionByDTO(dto);
+//     const { condition } = this.entity.getConditionByDTO<Find{{ upperName }}DTO>(dto);
 //     const result = await this.entity.findAll({ where: condition });
 //     return result;
 //   }
 
 //   /** 分页查询 */
 //   public async paginated(dto: Paginated{{ upperName }}DTO) {
-//     const { condition, page } = this.entity.getConditionByDTO(dto);
+//     const { condition, page } = this.entity.getConditionByDTO<Paginated{{ upperName }}DTO>(dto);
 //     const result = await this.entity.paginated({ page, where: condition });
 //     return result;
 //   }
 
 //   /** 创建 */
 //   public async create(dto: Create{{ upperName }}DTO) {
-//     const { entity } = this.entity.getEntityByDTO(dto);
+//     const { entity } = this.entity.getEntityByDTO<Create{{ upperName }}DTO>(dto);
 //     const result = await this.entity.create(entity);
 //     return result;
 //   }
 
 //   /** 更新 */
 //   public async update(id: string, dto: Update{{ upperName }}DTO) {
-//     const { entity } = this.entity.getEntityByDTO(dto);
+//     const { entity } = this.entity.getEntityByDTO<Update{{ upperName }}DTO>(dto);
 //     await this.entity.update(entity, { where: { id }});
 //   }
 
