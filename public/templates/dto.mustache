@@ -27,12 +27,11 @@ export class {{ upperName }}DTO {
 
 // /** 单条/多条查询 */
 // export class Find{{ upperName }}DTO
-//   extends OmitType(
-//     Paginated{{ upperName }}DTO,
-//     ['index', 'size', 'orderBy', 'orderRule'],
-//   )
-//   implements I{{ upperName }}
-// {}
+// implements I{{ upperName }}
+// {
+//   @ApiProperty({ name: 'name', type: String, required: false, example: 'name', description: '名字' })
+//   name?: string;
+// }
 
 // /** 创建 */
 // export class Create{{ upperName }}DTO
