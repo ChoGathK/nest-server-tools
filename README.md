@@ -15,15 +15,11 @@
 | 🏗  Nest: New Module              |
 | 🏗  Nest: New Extend              |
 
-| `modification` |
-| ------------------------------- |
-| 📁  Nest: Shared                  |
-| 📁  Nest: Common                  |
-| 📄  Nest: module                  |
-| 📄  Nest: entity                  |
-
 | `commands` |
 | -------------------------------- |
+| 📁  Nest: common                  |
+| 📄  Nest: module                  |
+| 📄  Nest: entity                  |
 | 📦  Nest: BO                      |
 | 📦  Nest: DAO                     |
 | 📦  Nest: DTO                     |
@@ -48,7 +44,7 @@
 
 ## Common
 
-> 请将使用 Nesterver 创建的项目放置于独立的 vscode 工作区，确保您有最好的开发体验 ☺️
+> 请将使用 Nest-Server 创建的项目放置于独立的 vscode 工作区，确保您有最好的开发体验 ☺️
 
 ### 创建整个通用业务模块
 
@@ -61,8 +57,7 @@
 ### 在 业务模块 中增加功能
 
 - 在 src - modules 的模块中点击右键唤出菜单，可以看到：
-  - `📁  Nest: Shared` 用于创建公共资源目录
-  - `📁  Nest: Common` 用于创建公共约定目录
+  - `📁  Nest: common` 用于创建公共约定目录
   - `📄  Nest: module` 用于创建模块注册表
   - `📦  Nest: BO`     用于创建 BO
   - `📦  Nest: DTO`    用于创建 DTO
@@ -75,14 +70,13 @@
 ### 在 拓展模块 中增加功能
 
 - 在 src - extends 的模块中点击右键唤出菜单，可以看到：
-  - `📁  Nest: Shared` 用于创建公共资源目录
-  - `📁  Nest: Common` 用于创建公共约定目录
+  - `📁  Nest: common` 用于创建公共约定目录
   - `📄  Nest: module` 用于创建模块注册表
   - `📦  Nest: Provider` 用于创建 Provider
 
 ### 在 拓展模块 中增加 sequelize model
 
-- 在 src - extends - sequelize - shared 目录中点击右键唤出菜单，可以看到：`📄  Nest: entity` 用于创建 sequelize model 模板
+- 在 src - entities 目录中点击右键唤出菜单，可以看到：`📄  Nest: entity` 用于创建 sequelize entity 模板
 
 ## License
 

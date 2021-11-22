@@ -32,11 +32,6 @@ export class CommandHandler {
   /** 命令执行器 */
   private async handler() {
     try {
-      if (this.topic === 'shared') {
-        this.initShared();
-        return;
-      } 
-
       if (this.topic === 'common') {
         this.initCommon();
         return;
@@ -77,22 +72,6 @@ export class CommandHandler {
 
     /** 创建模块目录 */
     mkdirSync(`${this.resource.path}/common`);
-  }
-
-  /** 初始化 Shared 目录 */
-  private initShared() {
-    const files = ['index'];
-
-    if (existsSync(`${this.resource.path}/shared`)) {
-      return window.showErrorMessage('shared 目录已存在');
-    }
-
-    /** 创建模块目录 */
-    mkdirSync(`${this.resource.path}/shared`);
-
-    for (const file of files) {
-      writeFileSync(`${this.resource.path}/shared/${file}.ts`, '');
-    }
   }
 
   /** 初始化 Modules 模块 */

@@ -17,33 +17,23 @@ export class {{ upperName }}DTO {
 // import { I{{ upperName }} } from '@/extends/sequelize';
 
 // /** 分页查询 */
-// export class Paginated{{ upperName }}DTO
-//   extends HttpRequestPageDTO
-//   implements I{{ upperName }}
-// {
+// export class Paginated{{ upperName }}DTO extends HttpRequestPageDTO implements I{{ upperName }} {
 //   @ApiProperty({ name: 'name', type: String, required: false, example: 'name', description: '名字' })
 //   name?: string;
 // }
 
 // /** 单条/多条查询 */
-// export class Find{{ upperName }}DTO
-// implements I{{ upperName }}
-// {
+// export class Find{{ upperName }}DTO implements I{{ upperName }} {
 //   @ApiProperty({ name: 'name', type: String, required: false, example: 'name', description: '名字' })
 //   name?: string;
 // }
 
 // /** 创建 */
-// export class Create{{ upperName }}DTO
-// implements I{{ upperName }}
-// {
+// export class Create{{ upperName }}DTO implements I{{ upperName }} {
 //   @IsNotEmpty()
 //   @ApiProperty({ name: 'name', type: String, required: true, example: 'name', description: '名字' })
 //   name: string;
 // }
 
 // /** 更新 */
-// export class Update{{ upperName }}DTO
-//   extends PartialType(Create{{ upperName }}DTO)
-//   implements I{{ upperName }}
-// {}
+// export class Update{{ upperName }}DTO extends PartialType(Create{{ upperName }}DTO) implements I{{ upperName }} {}

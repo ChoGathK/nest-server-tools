@@ -16,7 +16,6 @@ import { CommandHandler } from './commands';
 export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
 		/** 创建目录 */
-		registerCommand('extension.Shared', 'shared', 'init'),
 		registerCommand('extension.Common', 'common', 'init'),
 		/** 创建模块 */
 		registerCommand('extension.Modules', 'modules', 'init'),

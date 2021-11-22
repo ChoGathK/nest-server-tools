@@ -28,7 +28,6 @@
 		"onCommand:extension.Extends",
 		"onCommand:extension.Filter",
 		"onCommand:extension.Module.File",
-		"onCommand:extension.Shared",
 		"onCommand:extension.Sequelize.File",
 		"onCommand:extension.Modules",
 		"onCommand:extension.Manager",
@@ -56,10 +55,6 @@
 			{
 				"command": "extension.Sequelize.File",
 				"title": "📄 Nest: entity"
-			},
-			{
-				"command": "extension.Shared",
-				"title": "📁 Nest: shared"
 			},
 			{
 				"command": "extension.Common",
@@ -142,24 +137,19 @@
 					"group": "9_cutcopypaste"
 				},
 				{
-					"command": "extension.Shared",
-					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
-					"group": "7_modification"
-				},
-				{
 					"command": "extension.Common",
 					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
-					"group": "7_modification"
+					"group": "9_cutcopypaste"
 				},
 				{
 					"command": "extension.Module.File",
 					"when": "explorerResourceIsFolder && resourceFilename != modules && resourceFilename != extends",
-					"group": "7_modification"
+					"group": "9_cutcopypaste"
 				},
 				{
-					"command": "extension.Sequelize.File",
-					"when": "explorerResourceIsFolder && resourcePath =~ /extends/ && resourcePath =~ /shared/",
-					"group": "7_modification"
+					"command": "extension.Sequelize.entity",
+					"when": "explorerResourceIsFolder && resourcePath =~ /entities/",
+					"group": "9_cutcopypaste"
 				}
 			]
 		}
